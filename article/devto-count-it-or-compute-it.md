@@ -3,7 +3,7 @@ title: "Count It or Compute It: Given a Python Tool, a Model Stops Using It as t
 published: false
 description: "A Kaggle benchmark that asks 14 models the same 68 counting questions three ways: count the ids in the prompt, use a Python tool, or quote an exact count from a query tool. Every expected answer is computed by code, and the query tool's filters are graded as well as its numbers."
 tags: devchallenge, kagglechallenge, ai, machinelearning
-cover_image: https://raw.githubusercontent.com/xbill9/count-it-or-compute-it/main/article/devto-cover.d50932c1.jpg
+cover_image: https://raw.githubusercontent.com/xbill9/devto-kaggle/main/article/devto-cover.d50932c1.jpg
 ---
 
 *This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/challenges/kaggle-2026-09-23)*
@@ -12,7 +12,7 @@ This article provides a step by step guide to building a Kaggle benchmark that a
 
 With a Python tool available, Gemini 2.5 Flash used it on 20 of 26 questions about 11 ids, 2 of 21 about 110 ids and none of 21 about 1,100 ids. It skipped the tool where counting by eye fails. With the query tool, both Gemini Flash models answered all 68 questions correctly.
 
-https://github.com/xbill9/count-it-or-compute-it
+https://github.com/xbill9/devto-kaggle
 
 PENDING: Kaggle benchmark link
 
@@ -218,7 +218,7 @@ The strategy for benchmarking counting across 14 models was validated with an in
 
 #### References
 
-- This benchmark's code: https://github.com/xbill9/count-it-or-compute-it
+- This benchmark's code: https://github.com/xbill9/devto-kaggle
 - Kaggle Benchmarking Challenge: https://dev.to/challenges/kaggle-2026-09-23
 - Kaggle Benchmarks: https://www.kaggle.com/benchmarks
 - kaggle-benchmarks Python library: https://github.com/Kaggle/kaggle-benchmarks
