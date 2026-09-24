@@ -3,7 +3,7 @@ title: "Count It or Compute It: Given a Python Tool, a Model Stops Using It as t
 published: false
 description: "A Kaggle benchmark that asks 14 models the same 68 counting questions three ways: count the ids in the prompt, use a Python tool, or quote an exact count from a query tool. Every expected answer is computed by code, and the query tool's filters are graded as well as its numbers."
 tags: devchallenge, kagglechallenge, ai, machinelearning
-cover_image: PENDING
+cover_image: https://raw.githubusercontent.com/xbill9/count-it-or-compute-it/main/article/devto-cover.d50932c1.jpg
 ---
 
 *This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/challenges/kaggle-2026-09-23)*
