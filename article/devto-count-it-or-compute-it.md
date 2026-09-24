@@ -8,7 +8,7 @@ cover_image: https://raw.githubusercontent.com/xbill9/devto-kaggle/main/article/
 
 *This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/challenges/kaggle-2026-09-23)*
 
-This article provides a step by step guide to building a Kaggle benchmark that asks a model how many ids in a list meet a threshold, and runs it three ways: the model counts by reading, the model gets a Python tool, and the model gets a query tool that returns the exact count. Every expected answer is computed by code, and the query tool's filter is graded as well as the number the model quotes.
+Ask a model how many ids in a list are 10 or more, and the answer depends on who does the counting. This benchmark asks the same 68 questions three ways: the model counts by reading, the model has a Python tool, and the model has a query tool that returns the exact count.
 
 With a Python tool available, Gemini 2.5 Flash used it on 20 of 26 questions about 11 ids, 2 of 21 about 110 ids and none of 21 about 1,100 ids. It skipped the tool where counting by eye fails. With the query tool, both Gemini Flash models answered all 68 questions correctly.
 
@@ -20,103 +20,23 @@ PENDING: Kaggle benchmark link
 
 #### What I Benchmarked
 
-The question is the smallest one that exposes a model doing arithmetic it should hand to code: here is a list of ids, how many of them are 10 or more?
-
-It started with eleven ids.
+The itch is eleven ids.
 
 ```plaintext
 0, 2, 3, 20, 21, 22, 23, 10, 11, 12, 13
 ```
 
-The answer is 8, and Gemini 2.5 Flash gives it every time, which says nothing about eleven hundred ids. The benchmark scales the list, varies the English used for the threshold, and asks the same question three ways, so the result shows where counting by reading breaks and whether a model reaches for a tool when it does.
+How many of them are 10 or more? The answer is 8, and Gemini 2.5 Flash gives it every time, which says nothing about eleven hundred ids. Counting, filtering and comparing are work for code, and a model that does them by reading produces a confident number with no way to tell it is wrong.
 
----
+So the benchmark scales the list and asks the same question three ways:
 
-#### At This Point You Should Have…
-
-- A Kaggle account, with the Kaggle CLI installed and logged in: `kaggle auth login`
-- The task files: `count_in_context.py`, `count_python_tool.py` and `count_engine.py`
-- Python 3 for the local checks; they need no model calls and no `kaggle_benchmarks`
-
----
-
-#### Step 1 — Generate Every Question in Code
-
-Each question has an English phrase and a filter that means the same thing. The filter is the ground truth, and the expected count comes from running it.
-
-| Phrasing | Example | Filter |
+| Task | What the model gets | Who does the arithmetic |
 |---|---|---|
-| or-more | 10 or more | `id >= 10` |
-| at-least | at least 10 | `id >= 10` |
-| no-less-than | no less than 10 | `id >= 10` |
-| more-than | more than 10 | `id > 10` |
-| under | under 10 | `id < 10` |
-| at-most | at most 10 | `id <= 10` |
-| between-inclusive | between 5 and 9 inclusive | `id >= 5 and id <= 9` |
+| `count-in-context` | Every id in the prompt | The model, by reading |
+| `count-python-tool` | The same prompt, plus `run_python` with `ids` already defined | The model decides |
+| `count-engine` | No ids; a `count_ids(where)` tool that returns the exact count, minimum and maximum | The engine; the model writes the filter |
 
-Lists of 11, 110 and 330 ids each get all seven phrasings with three seeds, and the original eleven ids are asked five times. That is 68 questions per task. Every threshold is an id that appears in the list, so `>` and `>=` always give different answers.
-
-```shell
-python3 tasks/check.py
-```
-
-```plaintext
-ok: 68 rows per task, by size {11: 26, 110: 21, 330: 21}
-```
-
----
-
-#### Step 2 — Ask the Same Question Three Ways
-
-| Task | What the model gets | What it has to do |
-|---|---|---|
-| `count-in-context` | Every id in the prompt | Count them |
-| `count-python-tool` | The same prompt, plus `run_python` with `ids` already defined | Decide whether to compute the count |
-| `count-engine` | No ids; a `count_ids(where)` tool that returns the exact count, minimum and maximum | Write the filter and quote the number |
-
-The first task is the diagnostic. The third is the setup this benchmark argues for: the engine does the arithmetic, and the model does the reasoning.
-
----
-
-#### Step 3 — Grade the Filter the Model Sent
-
-A wrong filter returns an exact number with a cited source, which is harder to catch than a miscount. So `count-engine` logs every filter and checks it against the question by the ids it selects: `id > 9` counts as right for "10 or more".
-
-Each answer lands in one category:
-
-| Category | Meaning |
-|---|---|
-| `correct` | Quoted the count of a right filter |
-| `quoted-wrong-filter` | Quoted the exact count of a wrong filter, such as `id > 10` for "10 or more" |
-| `quoted-no-filter` | Sent no filter and quoted the table's total |
-| `not-quoted` | Had the tool's number and answered something else |
-| `no-call` | Never used the tool |
-
----
-
-#### Step 4 — Push and Run on Kaggle
-
-Each file is one Kaggle task, and the task name must match the push slug.
-
-```shell
-kaggle b t push count-engine -f tasks/count_engine.py --wait
-kaggle b t run count-engine -m gemini-2.5-flash -m claude-haiku-4-5-20251001 --wait
-kaggle b t download count-engine -o results
-```
-
-PENDING: v4 command output
-
----
-
-#### Step 5 — Score From the Run Files
-
-Every score in this article is computed by `summarize.py` from the downloaded run files. Each row's run file carries the dict the task returned: size, phrasing, answer, category and, for the engine task, every filter sent.
-
-```shell
-python3 tasks/summarize.py results
-```
-
-PENDING: v4 summary output
+Each task asks 68 questions: lists of 11, 110 and 330 ids, seven English phrasings of the threshold, three seeds each, and the original eleven ids five times. Every expected answer is computed by code from a filter written beside the phrasing.
 
 ---
 
@@ -130,15 +50,21 @@ PENDING: v4 summary output
 | Open weights | Gemma 4 26B A4B, gpt-oss-20b |
 | Qwen | Qwen 3 Next 80B Instruct, Qwen 3 Next 80B Thinking |
 
-Each vendor contributes a small, a mid-sized and a large model where Kaggle hosts them. Qwen 3 Next 80B runs twice, with reasoning off and on, to show whether thinking changes how often the model counts by eye.
+The lineup takes a small, a mid-sized and a large model from each vendor Kaggle hosts, because the question is whether model size hides the counting problem or fixes it. Two open-weight models show whether the pattern holds outside the hosted frontier. Qwen 3 Next 80B runs twice, with reasoning off and on, to show whether thinking changes how often a model counts by eye instead of reaching for the tool.
 
 ---
 
 #### Findings
 
-PENDING: 14-model table, engine results as the headline, Python tool and in-context beside it.
+PENDING: 14-model table, engine results beside Python tool and in-context.
 
-#### How Often Does the Model Reach for Python?
+#### 1. When the Engine Counts, the Answer Is Right
+
+Both Gemini Flash models answered all 68 engine questions correctly, and every filter they sent selected the right ids. Writing `id >= 10` for "10 or more" is a task these models do reliably. Counting the matches is the task they do not.
+
+PENDING: engine results for every model, and every wrong-filter or not-quoted answer listed with the filter sent.
+
+#### 2. Given a Python Tool, a Model Stops Using It as the List Grows
 
 On the 1,100-id version of the questions, Gemini 2.5 Flash used the Python tool less as the list grew, in both runs.
 
@@ -147,29 +73,19 @@ On the 1,100-id version of the questions, Gemini 2.5 Flash used the Python tool 
 | Run 1 | 25/26 | 2/21 | 0/17 |
 | Run 2 | 20/26 | 2/21 | 0/21 |
 
-When it used the tool it was right every time. When it skipped the tool it answered 30 of 46 questions wrong in run 2, including the original eleven ids twice, answered 7. Gemini 3.7 Flash used the tool on all 68 questions in every run and answered all 68 correctly.
+When it used the tool it was right every time. When it skipped the tool it answered 30 of 46 questions wrong in run 2, including the original eleven ids twice, answered 7. Its Python-tool score, 38 of 68, came in below its in-context score of 49. Gemini 3.7 Flash used the tool on all 68 questions in every run and answered all 68 correctly.
 
-PENDING: the same table for every model at 11, 110 and 330 ids.
+PENDING: tool use by list size for every model at 11, 110 and 330 ids.
 
-#### What a Reasoning Budget Does to Counting by Eye
+#### 3. A Reasoning Budget Turns Counting Into Guessing
 
-At 1,100 ids the in-context task is expensive in a specific way. The prompt is about 6,360 tokens, and Gemini 2.5 Flash and 3.7 Flash then spend an average of 9,755 to 19,897 output tokens per question counting through the list.
+At 1,100 ids the model counts through the list in its reasoning: Gemini 2.5 Flash and 3.7 Flash spent an average of 9,755 to 19,897 output tokens per question on a prompt of about 6,360 tokens.
 
-With output capped at 8,192 tokens, Gemini 3.7 Flash answered 1 of 21 questions about 1,100 ids correctly, against 19 and 15 of 21 without the cap. It kept answering when the budget ran out, so the cut-off shows up as a wrong number with no error. At 110 ids the cap made no difference: 21 of 21 in all three runs.
+With output capped at 8,192 tokens, Gemini 3.7 Flash answered 1 of 21 questions about 1,100 ids correctly, against 19 and 15 of 21 without the cap. It kept answering when the budget ran out, so the cut-off shows up as a wrong number with no error. At 110 ids the cap made no difference: 21 of 21 in all three runs. The benchmark's largest list is 330 ids so that counting fits inside the cap.
 
-That is why the benchmark's largest list is 330 ids, where counting fits inside the cap.
+#### What It Changed About How I Think About These Models
 
----
-
-#### 🔎 Tip: Cap the Output to Stay Inside the Quota
-
-Kaggle's model proxy reserves the worst-case cost of a call, based on the output-token limit, and refuses the call when that exceeds what is left of the day's quota. With no limit set, GPT-6 Astra reserved $6.40 per call and Claude Opus 5 $3.20. Passing a limit keeps the reservation to cents:
-
-```python
-llm.prompt(prompt, schema=int, extra_api_params={"max_completion_tokens": 8192})
-```
-
-The proxy accepted both `max_tokens` and `max_completion_tokens` on every model checked.
+PENDING: after the 14-model run.
 
 ---
 
@@ -188,6 +104,71 @@ The proxy accepted both `max_tokens` and `max_completion_tokens` on every model 
 #### So, Which One?
 
 PENDING: after the 14-model run.
+
+---
+
+#### What I'd Measure Next
+
+- **A tool that returns rows instead of a count.** The model gets the matching ids and has to count them itself. That is the common shape of a real tool, and it sits between reading the whole list and quoting an exact count.
+- **Harder filters.** "At least 10 but under 20", "other than those under 10", "outside 5 to 9". Single thresholds were translated correctly every time; compound and negated ones are where a wrong filter with an exact count would show up.
+- **Telling the model to use the tool.** Whether one sentence in the prompt brings tool use at 1,100 ids back up to where it is at 11.
+- **Repeat runs per model.** Gemini 3.7 Flash scored 66 and then 62 of 68 on identical in-context questions, so differences smaller than that need repeats.
+
+---
+
+#### How It Works
+
+**Step 1 — Generate every question in code.** Each phrasing has a filter that means the same thing, and the expected count comes from running it. Every threshold is an id in the list, so `>` and `>=` always give different answers.
+
+| Phrasing | Example | Filter |
+|---|---|---|
+| or-more | 10 or more | `id >= 10` |
+| at-least | at least 10 | `id >= 10` |
+| no-less-than | no less than 10 | `id >= 10` |
+| more-than | more than 10 | `id > 10` |
+| under | under 10 | `id < 10` |
+| at-most | at most 10 | `id <= 10` |
+| between-inclusive | between 5 and 9 inclusive | `id >= 5 and id <= 9` |
+
+```shell
+python3 tasks/check.py
+```
+
+```plaintext
+ok: 68 rows per task, by size {11: 26, 110: 21, 330: 21}
+```
+
+**Step 2 — Grade the filter the model sent.** A wrong filter returns an exact number with a cited source, which is harder to catch than a miscount. `count-engine` logs every filter and checks it by the ids it selects, so `id > 9` counts as right for "10 or more". Each answer lands in one category: `correct`, `quoted-wrong-filter`, `quoted-no-filter` (the table's total), `not-quoted` (had the tool's number, answered something else) or `no-call`.
+
+**Step 3 — Push and run on Kaggle.** Each file is one Kaggle task, and the task name must match the push slug.
+
+```shell
+kaggle b t push count-engine -f tasks/count_engine.py --wait
+kaggle b t run count-engine -m gemini-2.5-flash -m claude-haiku-4-5-20251001 --wait
+kaggle b t download count-engine -o results
+```
+
+PENDING: command output
+
+**Step 4 — Score from the run files.** Each row's run file carries the dict the task returned: size, phrasing, answer, category and, for the engine task, every filter sent. Every score here comes from `summarize.py`.
+
+```shell
+python3 tasks/summarize.py results
+```
+
+PENDING: summary output
+
+---
+
+#### 🔎 Tip: Cap the Output to Stay Inside the Quota
+
+Kaggle's model proxy reserves the worst-case cost of a call, based on the output-token limit, and refuses the call when that exceeds what is left of the day's quota. With no limit set, GPT-6 Astra reserved $6.40 per call and Claude Opus 5 $3.20. Passing a limit keeps the reservation to cents:
+
+```python
+llm.prompt(prompt, schema=int, extra_api_params={"max_completion_tokens": 8192})
+```
+
+The proxy accepted both `max_tokens` and `max_completion_tokens` on every model checked.
 
 ---
 
@@ -221,5 +202,5 @@ The strategy for benchmarking counting across 14 models was validated with an in
 - This benchmark's code: https://github.com/xbill9/devto-kaggle
 - Kaggle Benchmarking Challenge: https://dev.to/challenges/kaggle-2026-09-23
 - Kaggle Benchmarks: https://www.kaggle.com/benchmarks
-- kaggle-benchmarks Python library: https://github.com/Kaggle/kaggle-benchmarks
-- Kaggle's benchmark-writing skill: https://github.com/Kaggle/kaggle-skills/blob/main/write-kaggle-benchmarks/SKILL.md
+- The tasks are built on Kaggle's `kaggle-benchmarks` library: https://github.com/Kaggle/kaggle-benchmarks
+- Kaggle's benchmark-writing skill, used as the reference for the CLI workflow: https://github.com/Kaggle/kaggle-skills/blob/main/write-kaggle-benchmarks/SKILL.md
