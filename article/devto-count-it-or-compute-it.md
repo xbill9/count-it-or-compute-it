@@ -12,6 +12,8 @@ This article provides a step by step guide to building a Kaggle benchmark that a
 
 With a Python tool available, Gemini 2.5 Flash used it on 20 of 26 questions about 11 ids, 2 of 21 about 110 ids and none of 21 about 1,100 ids. It skipped the tool where counting by eye fails. With the query tool, both Gemini Flash models answered all 68 questions correctly.
 
+https://github.com/xbill9/count-it-or-compute-it
+
 PENDING: Kaggle benchmark link
 
 ---
@@ -216,6 +218,7 @@ The strategy for benchmarking counting across 14 models was validated with an in
 
 #### References
 
+- This benchmark's code: https://github.com/xbill9/count-it-or-compute-it
 - Kaggle Benchmarking Challenge: https://dev.to/challenges/kaggle-2026-09-23
 - Kaggle Benchmarks: https://www.kaggle.com/benchmarks
 - kaggle-benchmarks Python library: https://github.com/Kaggle/kaggle-benchmarks
