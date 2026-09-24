@@ -1,14 +1,14 @@
 ---
 title: "Count It or Compute It: Given a Python Tool, a Model Stops Using It as the List Grows"
 published: false
-description: "A Kaggle benchmark that asks 14 models the same 68 counting questions three ways: count the ids in the prompt, use a Python tool, or quote an exact count from a query tool. Every expected answer is computed by code, and the query tool's filters are graded as well as its numbers."
+description: "A Kaggle benchmark that asks 14 models the same 68 counting questions five ways: count the ids in the prompt, use a Python tool, use it when told to, count the rows a query tool returns, or quote the exact count a query tool returns. Every expected answer is computed by code, and every filter a model sends is graded."
 tags: devchallenge, kagglechallenge, ai, machinelearning
 cover_image: https://raw.githubusercontent.com/xbill9/devto-kaggle/main/article/devto-cover.d50932c1.jpg
 ---
 
 *This is a submission for the [Kaggle Benchmarking Challenge](https://dev.to/challenges/kaggle-2026-09-23)*
 
-Ask a model how many ids in a list are 10 or more, and the answer depends on who does the counting. This benchmark asks the same 68 questions three ways: the model counts by reading, the model has a Python tool, and the model has a query tool that returns the exact count.
+Ask a model how many ids in a list are 10 or more, and the answer depends on who does the counting. This benchmark asks the same 68 questions five ways, from the model counting by reading to a query tool that returns the exact count.
 
 With a Python tool available, Gemini 2.5 Flash used it on 20 of 26 questions about 11 ids, 2 of 21 about 110 ids and none of 21 about 1,100 ids. It skipped the tool where counting by eye fails. With the query tool, both Gemini Flash models answered all 68 questions correctly.
 
@@ -28,12 +28,14 @@ The itch is eleven ids.
 
 How many of them are 10 or more? The answer is 8, and Gemini 2.5 Flash gives it every time, which says nothing about eleven hundred ids. Counting, filtering and comparing are work for code, and a model that does them by reading produces a confident number with no way to tell it is wrong.
 
-So the benchmark scales the list and asks the same question three ways:
+So the benchmark scales the list and asks the same question five ways:
 
 | Task | What the model gets | Who does the arithmetic |
 |---|---|---|
 | `count-in-context` | Every id in the prompt | The model, by reading |
 | `count-python-tool` | The same prompt, plus `run_python` with `ids` already defined | The model decides |
+| `count-python-told` | The same, plus one sentence: use the tool, do not count by reading | The model, if it follows the instruction |
+| `count-rows-tool` | No ids; a `list_ids(where)` tool that returns the matching ids | The model counts the rows the tool returns |
 | `count-engine` | No ids; a `count_ids(where)` tool that returns the exact count, minimum and maximum | The engine; the model writes the filter |
 
 Each task asks 68 questions: lists of 11, 110 and 330 ids, seven English phrasings of the threshold, three seeds each, and the original eleven ids five times. Every expected answer is computed by code from a filter written beside the phrasing.
@@ -77,7 +79,19 @@ When it used the tool it was right every time. When it skipped the tool it answe
 
 PENDING: tool use by list size for every model at 11, 110 and 330 ids.
 
-#### 3. A Reasoning Budget Turns Counting Into Guessing
+#### 3. Does Telling the Model to Use the Tool Fix It?
+
+`count-python-told` adds one sentence to the Python-tool prompt and changes nothing else.
+
+PENDING: tool use by size, told vs not told, for every model.
+
+#### 4. A Tool That Returns Rows Leaves the Counting to the Model
+
+`count-rows-tool` gets the filter right the same way the engine task does, then hands the model the matching ids to count. A wrong answer is either a wrong filter or a miscount of the right rows, and the benchmark records which.
+
+PENDING: rows tool vs engine for every model, with miscounted-rows and wrong-filter counts.
+
+#### 5. A Reasoning Budget Turns Counting Into Guessing
 
 At 1,100 ids the model counts through the list in its reasoning: Gemini 2.5 Flash and 3.7 Flash spent an average of 9,755 to 19,897 output tokens per question on a prompt of about 6,360 tokens.
 
@@ -109,9 +123,7 @@ PENDING: after the 14-model run.
 
 #### What I'd Measure Next
 
-- **A tool that returns rows instead of a count.** The model gets the matching ids and has to count them itself. That is the common shape of a real tool, and it sits between reading the whole list and quoting an exact count.
 - **Harder filters.** "At least 10 but under 20", "other than those under 10", "outside 5 to 9". Single thresholds were translated correctly every time; compound and negated ones are where a wrong filter with an exact count would show up.
-- **Telling the model to use the tool.** Whether one sentence in the prompt brings tool use at 1,100 ids back up to where it is at 11.
 - **Repeat runs per model.** Gemini 3.7 Flash scored 66 and then 62 of 68 on identical in-context questions, so differences smaller than that need repeats.
 
 ---
@@ -138,7 +150,7 @@ python3 tasks/check.py
 ok: 68 rows per task, by size {11: 26, 110: 21, 330: 21}
 ```
 
-**Step 2 — Grade the filter the model sent.** A wrong filter returns an exact number with a cited source, which is harder to catch than a miscount. `count-engine` logs every filter and checks it by the ids it selects, so `id > 9` counts as right for "10 or more". Each answer lands in one category: `correct`, `quoted-wrong-filter`, `quoted-no-filter` (the table's total), `not-quoted` (had the tool's number, answered something else) or `no-call`.
+**Step 2 — Grade the filter the model sent.** A wrong filter returns an exact number with a cited source, which is harder to catch than a miscount. `count-engine` and `count-rows-tool` log every filter and checks it by the ids it selects, so `id > 9` counts as right for "10 or more". Each answer lands in one category: `correct`, `quoted-wrong-filter`, `quoted-no-filter` (the table's total), `not-quoted` (had the tool's number, answered something else) or `no-call`.
 
 **Step 3 — Push and run on Kaggle.** Each file is one Kaggle task, and the task name must match the push slug.
 

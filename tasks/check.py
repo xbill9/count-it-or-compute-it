@@ -1,4 +1,4 @@
-"""Local checks for the three count tasks. No model calls, no kaggle_benchmarks.
+"""Local checks for the count tasks. No model calls, no kaggle_benchmarks.
 
     python3 tasks/check.py
 """
@@ -6,7 +6,8 @@ import json
 import pathlib
 
 HERE = pathlib.Path(__file__).parent
-FILES = ["count_in_context.py", "count_python_tool.py", "count_engine.py"]
+FILES = ["count_in_context.py", "count_python_tool.py", "count_python_told.py",
+         "count_engine.py", "count_rows_tool.py"]
 START, END = "# ---- shared:", "# ---- end shared ----"
 
 
@@ -30,6 +31,8 @@ exec(blocks[FILES[0]], ns)
 exec(cell_after(texts["count_engine.py"], "def make_count_ids"), {**ns, "json": json}, ns)
 parse_where, count_where, same_filter = ns["parse_where"], ns["count_where"], ns["same_filter"]
 make_count_ids, classify, ROWS = ns["make_count_ids"], ns["classify"], ns["ROWS"]
+exec(cell_after(texts["count_rows_tool.py"], "def make_list_ids"), {**ns, "json": json}, ns)
+make_list_ids, classify_rows = ns["make_list_ids"], ns["classify_rows"]
 
 # The original measurement: eleven ids, 10 or more, is 8.
 assert count_where(ns["ORIGINAL_IDS"], "id >= 10")["count"] == 8
@@ -79,6 +82,31 @@ assert graded([], 8) == "correct-no-call"
 assert graded([], 6) == "no-call"
 assert graded(["id >= 10"], 6) == "not-quoted"
 assert graded(["nonsense", "id >= 10"], 8) == "correct"
+
+# Rows-tool grading: the tool lists ids, the model counts them.
+def graded_rows(wheres, answer):
+    log: list = []
+    tool = make_list_ids(ids, log)
+    for w in wheres:
+        out = json.loads(tool(w))
+        assert "ids" in out or "error" in out
+    return classify_rows(answer, 8, truth, ids, log)
+
+assert json.loads(make_list_ids(ids, [])("id >= 10"))["ids"] == [20, 21, 22, 23, 10, 11, 12, 13]
+assert graded_rows(["id >= 10"], 8) == "correct"
+assert graded_rows(["id >= 10"], 7) == "miscounted-rows"
+assert graded_rows(["id > 10"], 7) == "wrong-filter"
+assert graded_rows([""], 11) == "no-filter"
+assert graded_rows([], 8) == "correct-no-call"
+assert graded_rows(["nonsense", "id > 9"], 8) == "correct"
+
+# The told variant differs from the Python-tool task only in its prompt sentence and names.
+tool_src, told_src = texts["count_python_tool.py"], texts["count_python_told.py"]
+told_norm = (told_src.replace("count_python_told", "count_python_tool").replace("count-python-told", "count-python-tool")
+             .replace('"Use the `run_python` tool to compute the answer; do not count by reading.\\n\\n"', "")
+             .replace('"python-told"', '"python-tool"'))
+assert told_norm[told_norm.index("# %%\nimport"):] .replace('this exact list.\\n"\n        ', 'this exact list.\\n\\n"') \
+    == tool_src[tool_src.index("# %%\nimport"):], "told variant drifted from the Python-tool task"
 
 sizes = {}
 for r in ROWS:

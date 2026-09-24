@@ -13,7 +13,7 @@ import kaggle_benchmarks as kbench
 import pandas as pd
 
 # %%
-# ---- shared: identical in all three task files (check.py enforces it) ----
+# ---- shared: identical in every task file (check.py enforces it) ----
 import random
 import re
 import time

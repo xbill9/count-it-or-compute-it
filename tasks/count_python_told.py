@@ -1,10 +1,14 @@
 # %% [markdown]
-# # Count It or Compute It: in-context
+# # Count It or Compute It: Python tool, told to use it
 #
-# The model sees every id in the prompt and counts the ones that match.
-# No tools. This is the case where the model does the arithmetic.
+# The Python-tool task with one added sentence telling the model to use the
+# tool. Everything else is identical, so the difference in tool use between
+# the two tasks is the effect of that sentence.
 
 # %%
+import subprocess
+import sys
+
 import kaggle_benchmarks as kbench
 import pandas as pd
 
@@ -153,29 +157,50 @@ ROWS = build_rows()
 # ---- end shared ----
 
 # %%
-@kbench.task(name="count-in-context-row", store_task=False)
-def count_in_context_row(llm, case_id, size, phrasing, ids, question, truth_where, expected) -> dict:
-    ids = [int(x) for x in ids]
-    prompt = (
-        f"Here is a list of {len(ids)} ids:\n{', '.join(map(str, ids))}\n\n"
-        f"{question} Answer with just the number."
-    )
-    answer, _, error = prompt_with_retry(llm, prompt, schema=int)
-    answer = None if answer is None else int(answer)
-    correct = answer == int(expected)
-    kbench.assertions.assert_equal(int(expected), answer, expectation=f"{case_id}: {truth_where}")
-    return dict(case_id=case_id, size=int(size), phrasing=phrasing, answer=answer,
-                expected=int(expected), correct=correct,
-                category="no-answer" if answer is None else ("correct" if correct else "miscount"),
-                error=error)
+def make_run_python(ids: list[int], log: list[str]):
+    def run_python(code: str) -> str:
+        """Run Python 3 code and return its stdout and stderr. The variable `ids`, a list of ints, is already defined. Use print() to see results."""
+        log.append(code)
+        try:
+            p = subprocess.run([sys.executable, "-c", f"ids = {ids!r}\n{code}"],
+                               capture_output=True, text=True, timeout=30)
+        except subprocess.TimeoutExpired:
+            return "error: timed out after 30 s"
+        return (p.stdout + p.stderr)[-4000:] or "(no output)"
+    return run_python
 
 
 # %%
-@kbench.task(name="count-in-context")
-def count_in_context(llm) -> float:
-    runs = count_in_context_row.evaluate(
+@kbench.task(name="count-python-told-row", store_task=False)
+def count_python_told_row(llm, case_id, size, phrasing, ids, question, truth_where, expected) -> dict:
+    ids = [int(x) for x in ids]
+    prompt = (
+        f"Here is a list of {len(ids)} ids:\n{', '.join(map(str, ids))}\n\n"
+        "You have a `run_python` tool. In it, the variable `ids` already holds this exact list.\n"
+        "Use the `run_python` tool to compute the answer; do not count by reading.\n\n"
+        f"{question} Answer with just the number."
+    )
+    answer, log, error = prompt_with_retry(llm, prompt, make_tools=lambda log: make_run_python(ids, log), schema=int)
+    answer = None if answer is None else int(answer)
+    correct = answer == int(expected)
+    kbench.assertions.assert_equal(int(expected), answer, expectation=f"{case_id}: {truth_where}")
+    if answer is None:
+        category = "no-answer"
+    elif not log:
+        category = "correct-no-tool" if correct else "miscount-no-tool"
+    else:
+        category = "correct-tool" if correct else "wrong-tool"
+    return dict(case_id=case_id, size=int(size), phrasing=phrasing, answer=answer,
+                expected=int(expected), correct=correct, category=category,
+                tool_calls=len(log), code=log[-1] if log else "", error=error)
+
+
+# %%
+@kbench.task(name="count-python-told")
+def count_python_told(llm) -> float:
+    runs = count_python_told_row.evaluate(
         llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
-    return summarize(runs, len(ROWS), "in-context")
+    return summarize(runs, len(ROWS), "python-told")
 
 
-count_in_context.run(kbench.llm)
+count_python_told.run(kbench.llm)

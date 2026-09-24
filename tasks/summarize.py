@@ -47,7 +47,7 @@ for run_dir in sorted(p for p in ROOT.glob("*/*/*/*") if p.is_dir()):
     print(f"correct {correct} of {ROWS_PER_TASK}; errored {errored}; missing {missing}")
     print(f"by size      {table(rows, 'size')}")
     print(f"by phrasing  {table(rows, 'phrasing')}")
-    if task == "count-python-tool":
+    if task in ("count-python-tool", "count-python-told"):
         used: dict = collections.defaultdict(lambda: [0, 0])
         for r in rows:
             k = int(r["size"])

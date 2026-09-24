@@ -1,10 +1,15 @@
 # %% [markdown]
-# # Count It or Compute It: in-context
+# # Count It or Compute It: rows tool
 #
-# The model sees every id in the prompt and counts the ones that match.
-# No tools. This is the case where the model does the arithmetic.
+# The ids stay in a table the model cannot read directly. The model gets a
+# `list_ids` tool that takes a filter and returns the matching ids, not their
+# count, so the model writes the filter and then counts the rows itself.
+# The filter is graded the same way as in the engine task, so a wrong answer
+# is either a wrong filter or a miscount of the right rows.
 
 # %%
+import json
+
 import kaggle_benchmarks as kbench
 import pandas as pd
 
@@ -153,29 +158,56 @@ ROWS = build_rows()
 # ---- end shared ----
 
 # %%
-@kbench.task(name="count-in-context-row", store_task=False)
-def count_in_context_row(llm, case_id, size, phrasing, ids, question, truth_where, expected) -> dict:
+def make_list_ids(ids: list[int], log: list[dict]):
+    def list_ids(where: str) -> str:
+        """List the ids in the ids table that match a filter. The table has one integer column, `id`. `where` is clauses like `id >= 10`, `id < 5`, `id = 7`, `id != 3` or `id between 5 and 9` (inclusive), joined with `and`. An empty string lists every row. Returns the matching ids."""
+        try:
+            clauses = parse_where(where)
+        except ValueError as e:
+            log.append({"where": where, "error": str(e)})
+            return json.dumps({"error": f"{e}. Use clauses like `id >= 10` joined with `and`."})
+        hits = [x for x in ids if matches(clauses, x)]
+        log.append({"where": where, "count": len(hits)})
+        return json.dumps({"ids": hits})
+    return list_ids
+
+
+def classify_rows(answer: int, expected: int, truth_where: str, ids: list[int], log: list[dict]) -> str:
+    calls = [c for c in log if "error" not in c]
+    if not calls:
+        return "correct-no-call" if answer == expected else "no-call"
+    if any(same_filter(c["where"], truth_where, ids) for c in calls):
+        return "correct" if answer == expected else "miscounted-rows"
+    if any(not c["where"].strip() for c in calls):
+        return "correct-no-filter" if answer == expected else "no-filter"
+    return "correct-wrong-filter" if answer == expected else "wrong-filter"
+
+
+# %%
+@kbench.task(name="count-rows-tool-row", store_task=False)
+def count_rows_tool_row(llm, case_id, size, phrasing, ids, question, truth_where, expected) -> dict:
     ids = [int(x) for x in ids]
     prompt = (
-        f"Here is a list of {len(ids)} ids:\n{', '.join(map(str, ids))}\n\n"
+        f"A table of {len(ids)} rows with one integer column `id` is loaded in a query engine. "
+        "Use the `list_ids` tool to answer.\n\n"
         f"{question} Answer with just the number."
     )
-    answer, _, error = prompt_with_retry(llm, prompt, schema=int)
+    answer, log, error = prompt_with_retry(llm, prompt, make_tools=lambda log: make_list_ids(ids, log), schema=int)
     answer = None if answer is None else int(answer)
     correct = answer == int(expected)
     kbench.assertions.assert_equal(int(expected), answer, expectation=f"{case_id}: {truth_where}")
     return dict(case_id=case_id, size=int(size), phrasing=phrasing, answer=answer,
                 expected=int(expected), correct=correct,
-                category="no-answer" if answer is None else ("correct" if correct else "miscount"),
-                error=error)
+                category="no-answer" if answer is None else classify_rows(answer, int(expected), truth_where, ids, log),
+                filters=[c.get("where") for c in log], truth_where=truth_where, error=error)
 
 
 # %%
-@kbench.task(name="count-in-context")
-def count_in_context(llm) -> float:
-    runs = count_in_context_row.evaluate(
+@kbench.task(name="count-rows-tool")
+def count_rows_tool(llm) -> float:
+    runs = count_rows_tool_row.evaluate(
         llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
-    return summarize(runs, len(ROWS), "in-context")
+    return summarize(runs, len(ROWS), "rows-tool")
 
 
-count_in_context.run(kbench.llm)
+count_rows_tool.run(kbench.llm)

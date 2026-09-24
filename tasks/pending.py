@@ -5,7 +5,7 @@ version on Kaggle (from `kaggle b t status`) has all 68 rows completed.
 Tasks are listed cheapest first, so a day's quota goes to the engine task
 before the in-context one.
 
-    for t in count-engine count-python-tool count-in-context; do kaggle b t download $t -o results; done
+    for t in count-engine count-rows-tool count-python-tool count-python-told count-in-context; do kaggle b t download $t -o results; done
     python3 tasks/pending.py [results]
 """
 import json
@@ -16,7 +16,7 @@ import sys
 
 ROWS_PER_TASK = 68
 ROOT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "results")
-TASKS = ["count-engine", "count-python-tool", "count-in-context"]  # cheapest first
+TASKS = ["count-engine", "count-rows-tool", "count-python-tool", "count-python-told", "count-in-context"]  # cheapest first
 LINEUP = [
     "gemini-3.5-flash-lite", "gemini-2.5-flash", "gemini-3.7-flash", "gemini-3.8-flash",
     "claude-haiku-4-5-20251001", "claude-sonnet-5-default", "claude-opus-5-default",
