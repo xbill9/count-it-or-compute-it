@@ -206,9 +206,9 @@ The goal of this article was to measure whether models count, compute or query w
 
 The results were:
 
-🟢 PENDING
-❌ PENDING
-⚠️ PENDING
+- 🟢 PENDING
+- ❌ PENDING
+- ⚠️ PENDING
 
 PENDING: scope paragraph (one run per model per task, temperature 0, output capped at 8,192 tokens, Kaggle's model proxy, dates).
 
