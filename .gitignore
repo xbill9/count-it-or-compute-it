@@ -1,0 +1,7 @@
+results/
+results-probe/
+.ruff_cache/
+__pycache__/
+.claude/scheduled_tasks.lock
+.claude/settings.local.json
+.env

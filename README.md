@@ -1,0 +1,29 @@
+# Count It or Compute It
+
+A [Kaggle Benchmarks](https://www.kaggle.com/benchmarks) entry for the [DEV Kaggle Benchmarking Challenge](https://dev.to/challenges/kaggle-2026-09-23). It asks models how many ids in a list meet a threshold, three ways:
+
+| Task | What the model gets |
+|---|---|
+| `count-in-context` | Every id in the prompt; it counts them |
+| `count-python-tool` | The same prompt, plus a `run_python` tool with `ids` already defined |
+| `count-engine` | No ids; a `count_ids(where)` tool that returns the exact count. The filter it sends is graded as well as the number it quotes |
+
+Each task asks 68 questions: lists of 11, 110 and 330 ids, seven phrasings of the threshold, three seeds each, plus the original eleven-id case five times. Every expected answer is computed by code.
+
+## Layout
+
+- `tasks/count_*.py`: the three Kaggle tasks. The block between `# ---- shared:` and `# ---- end shared ----` must be identical in all three.
+- `tasks/check.py`: local checks, no model calls and no `kaggle_benchmarks` needed.
+- `tasks/summarize.py`, `tasks/costs.py`: scores and cost per row from downloaded run files.
+- `tasks/pending.py`: the `kaggle b t run` commands still needed for the model lineup.
+- `article/`: the dev.to write-up and the text evidence behind every figure in it.
+
+## Run
+
+```shell
+python3 tasks/check.py
+kaggle b t push count-engine -f tasks/count_engine.py --wait
+kaggle b t run count-engine -m gemini-2.5-flash --wait
+kaggle b t download count-engine -o results
+python3 tasks/summarize.py results
+```

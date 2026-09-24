@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=$(jq -r \".tool_input.file_path // .tool_response.filePath\"); case \"$f\" in \"$CLAUDE_PROJECT_DIR\"/tasks/*.py) lint=$(cd \"$CLAUDE_PROJECT_DIR\" && NO_COLOR=1 ruff check --no-cache --output-format concise \"$f\" 2>&1) || { echo \"ruff check failed on $f:\" >&2; echo \"$lint\" >&2; exit 2; }; out=$(PYTHON_COLORS=0 python3 \"$CLAUDE_PROJECT_DIR/tasks/check.py\" 2>&1) || { echo \"tasks/check.py failed after editing $f:\" >&2; echo \"$out\" >&2; exit 2; } ;; esac",
+            "timeout": 30,
+            "statusMessage": "Checking tasks..."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# model: reservation amounts seen in 'exceeds your available quota' refusals (count)
+count-engine claude-haiku-4-5-20251001: $0.320193 x14, $0.32019 x14, $0.320192 x12
+count-engine claude-opus-5-default: $3.200965 x15, $3.20095 x14, $3.20096 x14
+count-engine claude-sonnet-5-default: $0.640384 x14, $0.64038 x14, $0.640386 x13
+count-engine gemini-3.5-flash-lite: $0.1638979 x12, $0.1638976 x8, $0.1638973 x7
+count-engine gemini-3.8-flash: $0.24590475 x15, $0.2459025 x14, $0.245904 x14
+count-engine gpt-5.4-mini-2026-03-17: $0.57614475 x15, $0.5761425 x14, $0.576144 x14
+count-engine gpt-5.4-nano-2026-03-17: $0.160038 x13, $0.1600382 x7, $0.1600424 x5
+count-engine gpt-6-astra: $6.40193 x15, $6.4019 x14, $6.40192 x14
+count-engine gpt-oss-20b: $0.0327813 x8, $0.03278137 x3, $0.0327827 x1
+count-engine qwen3-next-80b-a3b-instruct: $0.31460175 x15, $0.3146013 x14, $0.3146016 x14
+count-engine qwen3-next-80b-a3b-thinking: $0.31460175 x15, $0.3146013 x14, $0.3146016 x14
