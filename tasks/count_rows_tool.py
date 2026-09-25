@@ -184,6 +184,14 @@ def classify_rows(answer: int, expected: int, truth_where: str, ids: list[int], 
 
 
 # %%
+@kbench.task(name="count-rows-tool")
+def count_rows_tool(llm) -> float:
+    runs = count_rows_tool_row.evaluate(
+        llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
+    return summarize(runs, len(ROWS), "rows-tool")
+
+
+# %%
 @kbench.task(name="count-rows-tool-row", store_task=False)
 def count_rows_tool_row(llm, case_id, size, phrasing, ids, question, truth_where, expected) -> dict:
     ids = [int(x) for x in ids]
@@ -200,14 +208,6 @@ def count_rows_tool_row(llm, case_id, size, phrasing, ids, question, truth_where
                 expected=int(expected), correct=correct,
                 category="no-answer" if answer is None else classify_rows(answer, int(expected), truth_where, ids, log),
                 filters=[c.get("where") for c in log], truth_where=truth_where, error=error)
-
-
-# %%
-@kbench.task(name="count-rows-tool")
-def count_rows_tool(llm) -> float:
-    runs = count_rows_tool_row.evaluate(
-        llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
-    return summarize(runs, len(ROWS), "rows-tool")
 
 
 count_rows_tool.run(kbench.llm)

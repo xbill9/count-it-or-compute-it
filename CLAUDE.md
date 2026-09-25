@@ -10,6 +10,7 @@ Entry for the dev.to Kaggle Benchmarking Challenge (due 2026-10-11, 11:59 PM PDT
 - `count_python_told.py` must differ from `count_python_tool.py` only in its names and the one "use the tool" sentence; `check.py` enforces it.
 - **The shared block must be byte-identical in every task file.** Edit it in one file, copy it to the others, then run `python3 tasks/check.py`. That script needs no model calls and no `kaggle_benchmarks`.
 - A PostToolUse hook runs `ruff check` (config in `ruff.toml`) and `check.py` after every edit to `tasks/*.py`. A failure comes back as hook feedback; fix it before pushing.
+- **The scoring task (`-> float`) must be the first `@kbench.task` in each file.** Kaggle names the task and reads its result type from the first decorator it finds; with the `*-row` helper first, the task page and benchmark leaderboard show `count-engine-row` and no score, even though the run holds the float.
 - Ground truth is computed by code from each row's `truth_where` filter. Never hand-write an expected count.
 - The engine and rows-tool tasks decide whether a filter is right by checking that it selects the same integers as the true filter, never by comparing strings (`id > 9` is right for "10 or more").
 

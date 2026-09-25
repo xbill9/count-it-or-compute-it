@@ -171,6 +171,14 @@ def make_run_python(ids: list[int], log: list[str]):
 
 
 # %%
+@kbench.task(name="count-python-tool")
+def count_python_tool(llm) -> float:
+    runs = count_python_tool_row.evaluate(
+        llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
+    return summarize(runs, len(ROWS), "python-tool")
+
+
+# %%
 @kbench.task(name="count-python-tool-row", store_task=False)
 def count_python_tool_row(llm, case_id, size, phrasing, ids, question, truth_where, expected) -> dict:
     ids = [int(x) for x in ids]
@@ -192,14 +200,6 @@ def count_python_tool_row(llm, case_id, size, phrasing, ids, question, truth_whe
     return dict(case_id=case_id, size=int(size), phrasing=phrasing, answer=answer,
                 expected=int(expected), correct=correct, category=category,
                 tool_calls=len(log), code=log[-1] if log else "", error=error)
-
-
-# %%
-@kbench.task(name="count-python-tool")
-def count_python_tool(llm) -> float:
-    runs = count_python_tool_row.evaluate(
-        llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
-    return summarize(runs, len(ROWS), "python-tool")
 
 
 count_python_tool.run(kbench.llm)

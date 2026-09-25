@@ -153,6 +153,14 @@ ROWS = build_rows()
 # ---- end shared ----
 
 # %%
+@kbench.task(name="count-in-context")
+def count_in_context(llm) -> float:
+    runs = count_in_context_row.evaluate(
+        llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
+    return summarize(runs, len(ROWS), "in-context")
+
+
+# %%
 @kbench.task(name="count-in-context-row", store_task=False)
 def count_in_context_row(llm, case_id, size, phrasing, ids, question, truth_where, expected) -> dict:
     ids = [int(x) for x in ids]
@@ -168,14 +176,6 @@ def count_in_context_row(llm, case_id, size, phrasing, ids, question, truth_wher
                 expected=int(expected), correct=correct,
                 category="no-answer" if answer is None else ("correct" if correct else "miscount"),
                 error=error)
-
-
-# %%
-@kbench.task(name="count-in-context")
-def count_in_context(llm) -> float:
-    runs = count_in_context_row.evaluate(
-        llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
-    return summarize(runs, len(ROWS), "in-context")
 
 
 count_in_context.run(kbench.llm)

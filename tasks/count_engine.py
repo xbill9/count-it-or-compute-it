@@ -188,6 +188,14 @@ def classify(answer: int, expected: int, truth_where: str, ids: list[int], log: 
 
 
 # %%
+@kbench.task(name="count-engine")
+def count_engine(llm) -> float:
+    runs = count_engine_row.evaluate(
+        llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
+    return summarize(runs, len(ROWS), "engine")
+
+
+# %%
 @kbench.task(name="count-engine-row", store_task=False)
 def count_engine_row(llm, case_id, size, phrasing, ids, question, truth_where, expected) -> dict:
     ids = [int(x) for x in ids]
@@ -204,14 +212,6 @@ def count_engine_row(llm, case_id, size, phrasing, ids, question, truth_where, e
                 expected=int(expected), correct=correct,
                 category="no-answer" if answer is None else classify(answer, int(expected), truth_where, ids, log),
                 filters=[c.get("where") for c in log], truth_where=truth_where, error=error)
-
-
-# %%
-@kbench.task(name="count-engine")
-def count_engine(llm) -> float:
-    runs = count_engine_row.evaluate(
-        llm=[llm], evaluation_data=pd.DataFrame(ROWS), n_jobs=4, on_failure="continue")
-    return summarize(runs, len(ROWS), "engine")
 
 
 count_engine.run(kbench.llm)
