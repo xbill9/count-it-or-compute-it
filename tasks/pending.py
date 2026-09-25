@@ -25,6 +25,11 @@ LINEUP = [
     "qwen3-next-80b-a3b-instruct", "qwen3-next-80b-a3b-thinking",
 ]
 
+# Kaggle's proxy rejects function tools for these models: "Function tools with
+# reasoning_effort are not supported for gpt-6-astra in /v1/chat/completions".
+# They run the in-context task only.
+NO_TOOLS = {"gpt-6-astra"}
+
 
 def completed_rows(run_dir: pathlib.Path) -> int:
     return sum(
@@ -43,6 +48,8 @@ for task in TASKS:
     latest = ROOT / task / str(version)
     need = []
     for model in LINEUP:
+        if model in NO_TOOLS and task != "count-in-context":
+            continue
         best = max((completed_rows(d) for d in (latest / model).glob("*")), default=0)
         if best < ROWS_PER_TASK:
             need.append((model, best))
