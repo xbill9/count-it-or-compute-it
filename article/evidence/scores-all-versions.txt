@@ -1,0 +1,1450 @@
+== count-engine v1 gemini-2.5-flash (run 2872326)
+correct 33 of 68; errored 35; missing 0
+by size      11: 26/26  110: 5/5  1100: 2/2
+by phrasing  at-least: 4/4  at-most: 3/3  between-inclusive: 4/4  more-than: 4/4  no-less-than: 3/3  or-more: 11/11  under: 4/4
+categories   correct: 33
+
+== count-engine v1 gemini-3.7-flash (run 2872325)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v2 claude-haiku-4-5-20251001 (run 2875761)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v2 claude-opus-5-default (run 2875766)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v2 claude-sonnet-5-default (run 2875764)
+correct 1 of 68; errored 67; missing 0
+by size      1100: 1/1
+by phrasing  at-least: 1/1
+categories   correct: 1
+
+== count-engine v2 gemini-2.5-flash (run 2872853)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v2 gemini-3.5-flash-lite (run 2875755)
+correct 11 of 68; errored 57; missing 0
+by size      11: 10/10  110: 1/1
+by phrasing  at-most: 1/1  between-inclusive: 1/1  more-than: 1/1  or-more: 8/8
+categories   correct: 11
+
+== count-engine v2 gemini-3.7-flash (run 2872791)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v2 gemini-3.8-flash (run 2875757)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v2 gemma-4-26b-a4b-it (run 2875778)
+correct 65 of 68; errored 3; missing 0
+by size      11: 24/24  110: 20/20  1100: 21/21
+by phrasing  at-least: 8/8  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 8/8  or-more: 13/13  under: 9/9
+categories   correct: 65
+
+== count-engine v2 gpt-5.4-mini-2026-03-17 (run 2875772)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v2 gpt-5.4-nano-2026-03-17 (run 2875769)
+correct 20 of 68; errored 48; missing 0
+by size      11: 1/1  1100: 19/19
+by phrasing  at-least: 3/3  at-most: 3/3  between-inclusive: 4/4  more-than: 3/3  no-less-than: 3/3  or-more: 1/1  under: 3/3
+categories   correct: 20
+
+== count-engine v2 gpt-6-astra (run 2875775)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v2 gpt-oss-20b (run 2875781)
+correct 49 of 68; errored 14; missing 0
+by size      11: 13/13  110: 15/20  1100: 21/21
+by phrasing  at-least: 5/6  at-most: 7/8  between-inclusive: 9/9  more-than: 7/8  no-less-than: 6/8  or-more: 7/7  under: 8/8
+categories   correct: 49  not-quoted: 5
+  wrong 110-at-least-s0: answered 0 expected 72 (off by -72)
+  wrong 110-no-less-than-s1: answered 1 expected 47 (off by -46)
+  wrong 110-no-less-than-s2: answered 250 expected 51 (off by +199)
+  wrong 110-more-than-s1: answered 0 expected 47 (off by -47)
+  wrong 110-at-most-s2: answered 0 expected 50 (off by -50)
+
+== count-engine v2 qwen3-next-80b-a3b-instruct (run 2875785)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v2 qwen3-next-80b-a3b-thinking (run 2875788)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 claude-haiku-4-5-20251001 (run 2935409)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 claude-opus-5-default (run 2935411)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 claude-sonnet-5-default (run 2935410)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 gemini-2.5-flash (run 2935407)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 gemini-3.5-flash-lite (run 2935406)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 gemini-3.7-flash (run 2881608)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v3 gemini-3.8-flash (run 2935408)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 gemma-4-26b-a4b-it (run 2935415)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 gpt-5.4-mini-2026-03-17 (run 2935413)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 gpt-5.4-nano-2026-03-17 (run 2935412)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 gpt-6-astra (run 2935414)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 gpt-oss-20b (run 2935416)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 qwen3-next-80b-a3b-instruct (run 2935417)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v3 qwen3-next-80b-a3b-thinking (run 2935418)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v7 claude-haiku-4-5-20251001 (run 3195567)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 claude-opus-5-default (run 3195571)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 claude-sonnet-5-default (run 3195569)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 gemini-2.5-flash (run 3195563)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 gemini-3.5-flash-lite (run 3195561)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v7 gemini-3.7-flash (run 3195461)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 gemini-3.8-flash (run 3195565)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 gemma-4-26b-a4b-it (run 3195580)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 gpt-5.4-mini-2026-03-17 (run 3195575)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 gpt-5.4-nano-2026-03-17 (run 3195573)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-engine v7 gpt-6-astra (run 3195578)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v7 gpt-oss-20b (run 3195582)
+correct 56 of 68; errored 0; missing 0
+by size      11: 22/26  110: 17/21  330: 17/21
+by phrasing  at-least: 9/9  at-most: 8/9  between-inclusive: 7/9  more-than: 9/9  no-less-than: 8/9  or-more: 9/14  under: 6/9
+categories   correct: 56  not-quoted: 12
+  wrong 11-under-s1: answered 1 expected 5 (off by -4)
+  wrong original-r1: answered 1 expected 8 (off by -7)
+  wrong 110-or-more-s0: answered 29 expected 52 (off by -23)
+  wrong 110-or-more-s2: answered 0 expected 77 (off by -77)
+  wrong 110-under-s1: answered 0 expected 61 (off by -61)
+  wrong 110-between-inclusive-s2: answered 1 expected 3 (off by -2)
+  wrong 330-no-less-than-s2: answered 5 expected 169 (off by -164)
+  wrong 11-or-more-s0: answered 0 expected 5 (off by -5)
+  wrong 330-under-s1: answered 123 expected 122 (off by +1)
+  wrong 330-at-most-s2: answered 512 expected 102 (off by +410)
+  wrong 330-between-inclusive-s1: answered 0 expected 60 (off by -60)
+  wrong 11-or-more-s2: answered 0 expected 8 (off by -8)
+
+== count-engine v7 qwen3-next-80b-a3b-instruct (run 3195584)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-engine v7 qwen3-next-80b-a3b-thinking (run 3195586)
+correct 0 of 68; errored 62; missing 0
+by size      330: 0/6
+by phrasing  at-most: 0/2  between-inclusive: 0/3  no-less-than: 0/1
+categories   no-call: 6
+  wrong 330-no-less-than-s2: answered 0 expected 169 (off by -169)
+  wrong 330-at-most-s1: answered 330 expected 167 (off by +163)
+  wrong 330-at-most-s2: answered 330 expected 102 (off by +228)
+  wrong 330-between-inclusive-s0: answered 0 expected 129 (off by -129)
+  wrong 330-between-inclusive-s1: answered 0 expected 60 (off by -60)
+  wrong 330-between-inclusive-s2: answered 0 expected 90 (off by -90)
+
+== count-in-context v1 gemini-2.5-flash (run 2871056)
+correct 47 of 68; errored 0; missing 0
+by size      11: 26/26  110: 13/21  1100: 8/21
+by phrasing  at-least: 7/9  at-most: 6/9  between-inclusive: 8/9  more-than: 7/9  no-less-than: 4/9  or-more: 11/14  under: 4/9
+categories   correct: 47  miscount: 21
+  wrong 110-at-least-s1: answered 51 expected 52 (off by -1)
+  wrong 110-no-less-than-s1: answered 37 expected 47 (off by -10)
+  wrong 110-no-less-than-s2: answered 46 expected 51 (off by -5)
+  wrong 110-under-s1: answered 62 expected 61 (off by +1)
+  wrong 110-under-s2: answered 55 expected 49 (off by +6)
+  wrong 110-at-most-s0: answered 55 expected 47 (off by +8)
+  wrong 110-at-most-s1: answered 78 expected 66 (off by +12)
+  wrong 110-at-most-s2: answered 51 expected 50 (off by +1)
+  wrong 1100-or-more-s0: answered 567 expected 580 (off by -13)
+  wrong 1100-or-more-s1: answered 562 expected 652 (off by -90)
+  wrong 1100-or-more-s2: answered 597 expected 575 (off by +22)
+  wrong 1100-at-least-s0: answered 673 expected 701 (off by -28)
+  wrong 1100-no-less-than-s0: answered 686 expected 616 (off by +70)
+  wrong 1100-no-less-than-s1: answered 690 expected 729 (off by -39)
+  wrong 1100-no-less-than-s2: answered 419 expected 482 (off by -63)
+  wrong 1100-more-than-s0: answered 601 expected 605 (off by -4)
+  wrong 1100-more-than-s1: answered 479 expected 485 (off by -6)
+  wrong 1100-under-s0: answered 176 expected 339 (off by -163)
+  wrong 1100-under-s1: answered 556 expected 626 (off by -70)
+  wrong 1100-under-s2: answered 310 expected 358 (off by -48)
+  wrong 1100-between-inclusive-s2: answered 527 expected 514 (off by +13)
+
+== count-in-context v1 gemini-3.7-flash (run 2871054)
+correct 66 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 19/21
+by phrasing  at-least: 9/9  at-most: 8/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 13/14  under: 9/9
+categories   correct: 66  miscount: 2
+  wrong 1100-or-more-s2: answered 572 expected 575 (off by -3)
+  wrong 1100-at-most-s2: answered 492 expected 493 (off by -1)
+
+== count-in-context v2 gemini-2.5-flash (run 2874211)
+correct 49 of 68; errored 0; missing 0
+by size      11: 26/26  110: 15/21  1100: 8/21
+by phrasing  at-least: 4/9  at-most: 7/9  between-inclusive: 6/9  more-than: 5/9  no-less-than: 7/9  or-more: 14/14  under: 6/9
+categories   correct: 49  miscount: 19
+  wrong 110-at-least-s0: answered 75 expected 72 (off by +3)
+  wrong 110-at-least-s2: answered 38 expected 46 (off by -8)
+  wrong 110-more-than-s2: answered 63 expected 61 (off by +2)
+  wrong 110-under-s1: answered 66 expected 61 (off by +5)
+  wrong 110-under-s2: answered 56 expected 49 (off by +7)
+  wrong 110-between-inclusive-s0: answered 46 expected 49 (off by -3)
+  wrong 1100-at-least-s0: answered 732 expected 701 (off by +31)
+  wrong 1100-at-least-s1: answered 451 expected 444 (off by +7)
+  wrong 1100-at-least-s2: answered 689 expected 654 (off by +35)
+  wrong 1100-no-less-than-s0: answered 605 expected 616 (off by -11)
+  wrong 1100-no-less-than-s1: answered 711 expected 729 (off by -18)
+  wrong 1100-more-than-s0: answered 550 expected 605 (off by -55)
+  wrong 1100-more-than-s1: answered 479 expected 485 (off by -6)
+  wrong 1100-more-than-s2: answered 551 expected 631 (off by -80)
+  wrong 1100-under-s2: answered 310 expected 358 (off by -48)
+  wrong 1100-at-most-s0: answered 307 expected 426 (off by -119)
+  wrong 1100-at-most-s1: answered 268 expected 333 (off by -65)
+  wrong 1100-between-inclusive-s0: answered 93 expected 135 (off by -42)
+  wrong 1100-between-inclusive-s2: answered 526 expected 514 (off by +12)
+
+== count-in-context v2 gemini-3.7-flash (run 2874195)
+correct 62 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 15/21
+by phrasing  at-least: 9/9  at-most: 8/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 7/9  or-more: 13/14  under: 7/9
+categories   correct: 62  miscount: 6
+  wrong 1100-or-more-s0: answered 579 expected 580 (off by -1)
+  wrong 1100-no-less-than-s0: answered 605 expected 616 (off by -11)
+  wrong 1100-no-less-than-s1: answered 713 expected 729 (off by -16)
+  wrong 1100-under-s0: answered 342 expected 339 (off by +3)
+  wrong 1100-under-s1: answered 614 expected 626 (off by -12)
+  wrong 1100-at-most-s2: answered 492 expected 493 (off by -1)
+
+== count-in-context v3 gemini-3.7-flash (run 2882250)
+correct 48 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 1/21
+by phrasing  at-least: 7/9  at-most: 6/9  between-inclusive: 6/9  more-than: 6/9  no-less-than: 6/9  or-more: 11/14  under: 6/9
+categories   correct: 48  miscount: 20
+  wrong 1100-or-more-s0: answered 571 expected 580 (off by -9)
+  wrong 1100-or-more-s1: answered 622 expected 652 (off by -30)
+  wrong 1100-or-more-s2: answered 566 expected 575 (off by -9)
+  wrong 1100-at-least-s0: answered 709 expected 701 (off by +8)
+  wrong 1100-at-least-s2: answered 646 expected 654 (off by -8)
+  wrong 1100-no-less-than-s0: answered 605 expected 616 (off by -11)
+  wrong 1100-no-less-than-s1: answered 724 expected 729 (off by -5)
+  wrong 1100-no-less-than-s2: answered 476 expected 482 (off by -6)
+  wrong 1100-more-than-s0: answered 568 expected 605 (off by -37)
+  wrong 1100-more-than-s1: answered 481 expected 485 (off by -4)
+  wrong 1100-more-than-s2: answered 597 expected 631 (off by -34)
+  wrong 1100-under-s0: answered 353 expected 339 (off by +14)
+  wrong 1100-under-s1: answered 639 expected 626 (off by +13)
+  wrong 1100-under-s2: answered 361 expected 358 (off by +3)
+  wrong 1100-at-most-s0: answered 435 expected 426 (off by +9)
+  wrong 1100-at-most-s1: answered 313 expected 333 (off by -20)
+  wrong 1100-at-most-s2: answered 498 expected 493 (off by +5)
+  wrong 1100-between-inclusive-s0: answered 118 expected 135 (off by -17)
+  wrong 1100-between-inclusive-s1: answered 372 expected 396 (off by -24)
+  wrong 1100-between-inclusive-s2: answered 521 expected 514 (off by +7)
+
+== count-python-told v2 claude-haiku-4-5-20251001 (run 3196784)
+correct 45 of 68; errored 23; missing 0
+by size      11: 20/20  110: 20/20  330: 5/5
+by phrasing  at-least: 7/7  at-most: 8/8  between-inclusive: 6/6  more-than: 7/7  no-less-than: 6/6  or-more: 5/5  under: 6/6
+tool used    11: 20/20  110: 20/20  330: 5/5
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 45
+
+== count-python-told v2 claude-opus-5-default (run 3196786)
+correct 1 of 68; errored 67; missing 0
+by size      330: 1/1
+by phrasing  more-than: 1/1
+tool used    330: 1/1
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 1
+
+== count-python-told v2 claude-sonnet-5-default (run 3196785)
+correct 19 of 68; errored 49; missing 0
+by size      11: 16/16  330: 3/3
+by phrasing  at-least: 3/3  between-inclusive: 1/1  more-than: 3/3  no-less-than: 3/3  or-more: 8/8  under: 1/1
+tool used    11: 16/16  330: 3/3
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 19
+
+== count-python-told v2 gemini-2.5-flash (run 3196780)
+correct 19 of 68; errored 15; missing 0
+by size      11: 17/18  110: 1/14  330: 1/21
+by phrasing  at-least: 3/6  at-most: 2/8  between-inclusive: 0/6  more-than: 2/7  no-less-than: 2/5  or-more: 9/13  under: 1/8
+tool used    11: 16/18  110: 0/14  330: 1/21
+tool skipped 36 rows: 34 of 36 wrong
+categories   miscount-no-tool: 34  correct-tool: 17  correct-no-tool: 2
+  wrong 11-under-s0: answered 7 expected 6 (off by +1)
+  wrong 110-or-more-s1: answered 64 expected 72 (off by -8)
+  wrong 110-more-than-s0: answered 54 expected 53 (off by +1)
+  wrong 110-more-than-s1: answered 46 expected 47 (off by -1)
+  wrong 110-more-than-s2: answered 68 expected 61 (off by +7)
+  wrong 110-under-s0: answered 47 expected 48 (off by -1)
+  wrong 110-under-s1: answered 68 expected 61 (off by +7)
+  wrong 110-under-s2: answered 48 expected 49 (off by -1)
+  wrong 110-at-most-s0: answered 52 expected 47 (off by +5)
+  wrong 110-at-most-s1: answered 73 expected 66 (off by +7)
+  wrong 110-at-most-s2: answered 60 expected 50 (off by +10)
+  wrong 110-between-inclusive-s0: answered 35 expected 49 (off by -14)
+  wrong 110-between-inclusive-s1: answered 16 expected 17 (off by -1)
+  wrong 110-between-inclusive-s2: answered 4 expected 3 (off by +1)
+  wrong 330-or-more-s0: answered 149 expected 158 (off by -9)
+  wrong 330-or-more-s1: answered 155 expected 154 (off by +1)
+  wrong 330-or-more-s2: answered 141 expected 160 (off by -19)
+  wrong 330-at-least-s0: answered 213 expected 204 (off by +9)
+  wrong 330-at-least-s1: answered 242 expected 225 (off by +17)
+  wrong 330-at-least-s2: answered 194 expected 199 (off by -5)
+  wrong 330-no-less-than-s0: answered 185 expected 178 (off by +7)
+  wrong 330-no-less-than-s1: answered 242 expected 220 (off by +22)
+  wrong 330-no-less-than-s2: answered 178 expected 169 (off by +9)
+  wrong 330-more-than-s1: answered 199 expected 190 (off by +9)
+  wrong 330-more-than-s2: answered 240 expected 216 (off by +24)
+  wrong 330-under-s0: answered 141 expected 135 (off by +6)
+  wrong 330-under-s1: answered 121 expected 122 (off by -1)
+  wrong 330-under-s2: answered 163 expected 173 (off by -10)
+  wrong 330-at-most-s0: answered 128 expected 137 (off by -9)
+  wrong 330-at-most-s1: answered 158 expected 167 (off by -9)
+  wrong 330-at-most-s2: answered 99 expected 102 (off by -3)
+  wrong 330-between-inclusive-s0: answered 139 expected 129 (off by +10)
+  wrong 330-between-inclusive-s1: answered 66 expected 60 (off by +6)
+  wrong 330-between-inclusive-s2: answered 110 expected 90 (off by +20)
+
+== count-python-told v2 gemini-3.5-flash-lite (run 3196779)
+correct 48 of 68; errored 20; missing 0
+by size      11: 25/25  110: 9/9  330: 14/14
+by phrasing  at-least: 6/6  at-most: 6/6  between-inclusive: 6/6  more-than: 7/7  no-less-than: 7/7  or-more: 10/10  under: 6/6
+tool used    11: 25/25  110: 9/9  330: 14/14
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 48
+
+== count-python-told v2 gemini-3.7-flash (run 3196782)
+correct 50 of 68; errored 18; missing 0
+by size      11: 12/12  110: 17/17  330: 21/21
+by phrasing  at-least: 7/7  at-most: 6/6  between-inclusive: 8/8  more-than: 6/6  no-less-than: 5/5  or-more: 12/12  under: 6/6
+tool used    11: 12/12  110: 17/17  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 50
+
+== count-python-told v2 gemini-3.8-flash (run 3196783)
+correct 31 of 68; errored 37; missing 0
+by size      11: 16/16  110: 1/1  330: 14/14
+by phrasing  at-least: 3/3  at-most: 4/4  between-inclusive: 4/4  more-than: 6/6  no-less-than: 4/4  or-more: 5/5  under: 5/5
+tool used    11: 16/16  110: 1/1  330: 14/14
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 31
+
+== count-python-told v2 gemma-4-26b-a4b-it (run 3196790)
+correct 65 of 68; errored 3; missing 0
+by size      11: 23/23  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 11/11  under: 9/9
+tool used    11: 23/23  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 65
+
+== count-python-told v2 gpt-5.4-mini-2026-03-17 (run 3196788)
+correct 25 of 68; errored 41; missing 0
+by size      11: 10/12  110: 1/1  330: 14/14
+by phrasing  at-least: 4/4  at-most: 3/3  between-inclusive: 3/3  more-than: 2/2  no-less-than: 2/2  or-more: 8/10  under: 3/3
+tool used    11: 12/12  110: 1/1  330: 14/14
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 25  wrong-tool: 2
+  wrong original-r3: answered 7 expected 8 (off by -1)
+  wrong 11-or-more-s0: answered 4 expected 5 (off by -1)
+
+== count-python-told v2 gpt-5.4-nano-2026-03-17 (run 3196787)
+correct 55 of 68; errored 13; missing 0
+by size      11: 19/19  110: 15/15  330: 21/21
+by phrasing  at-least: 7/7  at-most: 6/6  between-inclusive: 8/8  more-than: 7/7  no-less-than: 7/7  or-more: 13/13  under: 7/7
+tool used    11: 19/19  110: 15/15  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 55
+
+== count-python-told v2 gpt-6-astra (run 3196789)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+tool used    
+tool skipped 0 rows: 0 of 0 wrong
+categories   
+
+== count-python-told v2 gpt-oss-20b (run 3196791)
+correct 49 of 68; errored 0; missing 0
+by size      11: 24/26  110: 11/21  330: 14/21
+by phrasing  at-least: 6/9  at-most: 6/9  between-inclusive: 7/9  more-than: 6/9  no-less-than: 5/9  or-more: 10/14  under: 9/9
+tool used    11: 25/26  110: 13/21  330: 15/21
+tool skipped 15 rows: 13 of 15 wrong
+categories   correct-tool: 47  miscount-no-tool: 13  wrong-tool: 6  correct-no-tool: 2
+  wrong 11-no-less-than-s2: answered 1 expected 5 (off by -4)
+  wrong 110-or-more-s2: answered 0 expected 77 (off by -77)
+  wrong 110-at-least-s0: answered 0 expected 72 (off by -72)
+  wrong original-r2: answered 1 expected 8 (off by -7)
+  wrong 110-at-least-s1: answered 0 expected 52 (off by -52)
+  wrong 110-at-least-s2: answered 0 expected 46 (off by -46)
+  wrong 110-no-less-than-s1: answered 1 expected 47 (off by -46)
+  wrong 110-no-less-than-s2: answered 91 expected 51 (off by +40)
+  wrong 110-more-than-s2: answered 1 expected 61 (off by -60)
+  wrong 110-at-most-s1: answered 0 expected 66 (off by -66)
+  wrong 110-at-most-s2: answered 0 expected 50 (off by -50)
+  wrong 110-between-inclusive-s2: answered 0 expected 3 (off by -3)
+  wrong 330-or-more-s0: answered 0 expected 158 (off by -158)
+  wrong 330-or-more-s1: answered 1 expected 154 (off by -153)
+  wrong 330-no-less-than-s1: answered 1 expected 220 (off by -219)
+  wrong 330-more-than-s0: answered 0 expected 155 (off by -155)
+  wrong 330-more-than-s2: answered 1 expected 216 (off by -215)
+  wrong 330-at-most-s1: answered 0 expected 167 (off by -167)
+  wrong 330-between-inclusive-s1: answered 1 expected 60 (off by -59)
+
+== count-python-told v2 qwen3-next-80b-a3b-instruct (run 3196792)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+tool used    
+tool skipped 0 rows: 0 of 0 wrong
+categories   
+
+== count-python-told v2 qwen3-next-80b-a3b-thinking (run 3196793)
+correct 55 of 68; errored 1; missing 0
+by size      11: 25/25  110: 20/21  330: 10/21
+by phrasing  at-least: 8/9  at-most: 7/9  between-inclusive: 6/9  more-than: 8/9  no-less-than: 6/9  or-more: 11/13  under: 9/9
+tool used    11: 17/25  110: 13/21  330: 10/21
+tool skipped 15 rows: 0 of 15 wrong
+categories   correct-tool: 40  correct-no-tool: 15  no-answer: 12
+  no answer 110-at-most-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-or-more-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-or-more-s2: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-at-least-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-no-less-than-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-no-less-than-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-no-less-than-s2: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-more-than-s2: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-at-most-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-between-inclusive-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-between-inclusive-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-between-inclusive-s2: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+
+== count-python-tool v1 gemini-2.5-flash (run 2872149)
+correct 38 of 68; errored 4; missing 0
+by size      11: 25/26  110: 11/21  1100: 2/17
+by phrasing  at-least: 5/7  at-most: 5/9  between-inclusive: 4/9  more-than: 5/9  no-less-than: 4/8  or-more: 8/13  under: 7/9
+tool used    11: 25/26  110: 2/21  1100: 0/17
+tool skipped 37 rows: 26 of 37 wrong
+categories   correct-tool: 27  miscount-no-tool: 26  correct-no-tool: 11
+  wrong 11-no-less-than-s0: answered 9 expected 8 (off by +1)
+  wrong 110-or-more-s0: answered 51 expected 52 (off by -1)
+  wrong 110-or-more-s1: answered 70 expected 72 (off by -2)
+  wrong 110-or-more-s2: answered 80 expected 77 (off by +3)
+  wrong 110-at-least-s1: answered 51 expected 52 (off by -1)
+  wrong 110-no-less-than-s2: answered 52 expected 51 (off by +1)
+  wrong 110-more-than-s0: answered 60 expected 53 (off by +7)
+  wrong 110-at-most-s2: answered 56 expected 50 (off by +6)
+  wrong 110-between-inclusive-s0: answered 41 expected 49 (off by -8)
+  wrong 110-between-inclusive-s1: answered 14 expected 17 (off by -3)
+  wrong 110-between-inclusive-s2: answered 4 expected 3 (off by +1)
+  wrong 1100-or-more-s0: answered 526 expected 580 (off by -54)
+  wrong 1100-or-more-s2: answered 605 expected 575 (off by +30)
+  wrong 1100-at-least-s0: answered 550 expected 701 (off by -151)
+  wrong 1100-no-less-than-s0: answered 704 expected 616 (off by +88)
+  wrong 1100-no-less-than-s1: answered 811 expected 729 (off by +82)
+  wrong 1100-more-than-s0: answered 586 expected 605 (off by -19)
+  wrong 1100-more-than-s1: answered 388 expected 485 (off by -97)
+  wrong 1100-more-than-s2: answered 630 expected 631 (off by -1)
+  wrong 1100-under-s1: answered 618 expected 626 (off by -8)
+  wrong 1100-under-s2: answered 468 expected 358 (off by +110)
+  wrong 1100-at-most-s0: answered 313 expected 426 (off by -113)
+  wrong 1100-at-most-s1: answered 376 expected 333 (off by +43)
+  wrong 1100-at-most-s2: answered 376 expected 493 (off by -117)
+  wrong 1100-between-inclusive-s1: answered 376 expected 396 (off by -20)
+  wrong 1100-between-inclusive-s2: answered 511 expected 514 (off by -3)
+
+== count-python-tool v1 gemini-3.7-flash (run 2872125)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  1100: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v2 gemini-2.5-flash (run 2873942)
+correct 38 of 68; errored 0; missing 0
+by size      11: 23/26  110: 12/21  1100: 3/21
+by phrasing  at-least: 5/9  at-most: 6/9  between-inclusive: 5/9  more-than: 3/9  no-less-than: 6/9  or-more: 8/14  under: 5/9
+tool used    11: 20/26  110: 2/21  1100: 0/21
+tool skipped 46 rows: 30 of 46 wrong
+categories   miscount-no-tool: 30  correct-tool: 22  correct-no-tool: 16
+  wrong 11-more-than-s1: answered 8 expected 6 (off by +2)
+  wrong original-r1: answered 7 expected 8 (off by -1)
+  wrong 110-or-more-s2: answered 75 expected 77 (off by -2)
+  wrong 110-at-least-s0: answered 80 expected 72 (off by +8)
+  wrong 110-no-less-than-s2: answered 49 expected 51 (off by -2)
+  wrong 110-more-than-s0: answered 59 expected 53 (off by +6)
+  wrong 110-more-than-s1: answered 37 expected 47 (off by -10)
+  wrong 110-under-s1: answered 73 expected 61 (off by +12)
+  wrong original-r3: answered 7 expected 8 (off by -1)
+  wrong 110-at-most-s0: answered 46 expected 47 (off by -1)
+  wrong 110-between-inclusive-s0: answered 60 expected 49 (off by +11)
+  wrong 110-between-inclusive-s2: answered 4 expected 3 (off by +1)
+  wrong 1100-or-more-s0: answered 483 expected 580 (off by -97)
+  wrong 1100-or-more-s1: answered 460 expected 652 (off by -192)
+  wrong 1100-or-more-s2: answered 569 expected 575 (off by -6)
+  wrong 1100-at-least-s0: answered 546 expected 701 (off by -155)
+  wrong 1100-at-least-s1: answered 400 expected 444 (off by -44)
+  wrong 1100-at-least-s2: answered 662 expected 654 (off by +8)
+  wrong 1100-no-less-than-s0: answered 605 expected 616 (off by -11)
+  wrong 1100-no-less-than-s2: answered 476 expected 482 (off by -6)
+  wrong 1100-more-than-s0: answered 730 expected 605 (off by +125)
+  wrong 1100-more-than-s1: answered 435 expected 485 (off by -50)
+  wrong 1100-more-than-s2: answered 622 expected 631 (off by -9)
+  wrong 1100-under-s0: answered 305 expected 339 (off by -34)
+  wrong 1100-under-s1: answered 472 expected 626 (off by -154)
+  wrong 1100-under-s2: answered 372 expected 358 (off by +14)
+  wrong 1100-at-most-s0: answered 242 expected 426 (off by -184)
+  wrong 1100-at-most-s1: answered 376 expected 333 (off by +43)
+  wrong 1100-between-inclusive-s1: answered 407 expected 396 (off by +11)
+  wrong 1100-between-inclusive-s2: answered 405 expected 514 (off by -109)
+
+== count-python-tool v2 gemini-3.7-flash (run 2873906)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  1100: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v3 gemini-3.7-flash (run 2881842)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  1100: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  1100: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v6 claude-haiku-4-5-20251001 (run 3196474)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v6 claude-opus-5-default (run 3196476)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v6 claude-sonnet-5-default (run 3196475)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v6 gemini-2.5-flash (run 3196472)
+correct 36 of 68; errored 1; missing 0
+by size      11: 24/26  110: 12/21  330: 0/20
+by phrasing  at-least: 4/9  at-most: 3/9  between-inclusive: 5/9  more-than: 3/9  no-less-than: 6/9  or-more: 10/14  under: 5/8
+tool used    11: 19/26  110: 3/21  330: 0/20
+tool skipped 45 rows: 31 of 45 wrong
+categories   miscount-no-tool: 31  correct-tool: 22  correct-no-tool: 14
+  wrong 11-more-than-s2: answered 6 expected 5 (off by +1)
+  wrong 11-at-most-s0: answered 8 expected 7 (off by +1)
+  wrong 110-or-more-s0: answered 53 expected 52 (off by +1)
+  wrong 110-at-least-s1: answered 51 expected 52 (off by -1)
+  wrong 110-at-least-s2: answered 49 expected 46 (off by +3)
+  wrong 110-more-than-s0: answered 60 expected 53 (off by +7)
+  wrong 110-more-than-s1: answered 37 expected 47 (off by -10)
+  wrong 110-under-s0: answered 47 expected 48 (off by -1)
+  wrong 110-at-most-s0: answered 46 expected 47 (off by -1)
+  wrong 110-at-most-s2: answered 51 expected 50 (off by +1)
+  wrong 110-between-inclusive-s0: answered 50 expected 49 (off by +1)
+  wrong 330-or-more-s0: answered 152 expected 158 (off by -6)
+  wrong 330-or-more-s1: answered 137 expected 154 (off by -17)
+  wrong 330-or-more-s2: answered 152 expected 160 (off by -8)
+  wrong 330-at-least-s0: answered 202 expected 204 (off by -2)
+  wrong 330-at-least-s1: answered 257 expected 225 (off by +32)
+  wrong 330-at-least-s2: answered 196 expected 199 (off by -3)
+  wrong 330-no-less-than-s0: answered 196 expected 178 (off by +18)
+  wrong 330-no-less-than-s1: answered 204 expected 220 (off by -16)
+  wrong 330-no-less-than-s2: answered 177 expected 169 (off by +8)
+  wrong 330-more-than-s0: answered 152 expected 155 (off by -3)
+  wrong 330-more-than-s1: answered 165 expected 190 (off by -25)
+  wrong 330-more-than-s2: answered 240 expected 216 (off by +24)
+  wrong 330-under-s0: answered 136 expected 135 (off by +1)
+  wrong 330-under-s2: answered 202 expected 173 (off by +29)
+  wrong 330-at-most-s0: answered 110 expected 137 (off by -27)
+  wrong 330-at-most-s1: answered 162 expected 167 (off by -5)
+  wrong 330-at-most-s2: answered 98 expected 102 (off by -4)
+  wrong 330-between-inclusive-s0: answered 110 expected 129 (off by -19)
+  wrong 330-between-inclusive-s1: answered 41 expected 60 (off by -19)
+  wrong 330-between-inclusive-s2: answered 87 expected 90 (off by -3)
+
+== count-python-tool v6 gemini-3.5-flash-lite (run 3196471)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v6 gemini-3.7-flash (run 3194139)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v6 gemini-3.8-flash (run 3196473)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v6 gemma-4-26b-a4b-it (run 3196480)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 24/26  110: 21/21  330: 21/21
+tool skipped 2 rows: 0 of 2 wrong
+categories   correct-tool: 66  correct-no-tool: 2
+
+== count-python-tool v6 gpt-5.4-mini-2026-03-17 (run 3196478)
+correct 61 of 68; errored 0; missing 0
+by size      11: 24/26  110: 19/21  330: 18/21
+by phrasing  at-least: 8/9  at-most: 9/9  between-inclusive: 9/9  more-than: 7/9  no-less-than: 7/9  or-more: 12/14  under: 9/9
+tool used    11: 26/26  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 61  wrong-tool: 7
+  wrong 11-no-less-than-s1: answered 4 expected 5 (off by -1)
+  wrong original-r2: answered 7 expected 8 (off by -1)
+  wrong 110-at-least-s2: answered 48 expected 46 (off by +2)
+  wrong 110-more-than-s2: answered 58 expected 61 (off by -3)
+  wrong 330-or-more-s2: answered 0 expected 160 (off by -160)
+  wrong 330-no-less-than-s1: answered 219 expected 220 (off by -1)
+  wrong 330-more-than-s0: answered 0 expected 155 (off by -155)
+
+== count-python-tool v6 gpt-5.4-nano-2026-03-17 (run 3196477)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+tool used    11: 26/26  110: 21/21  330: 21/21
+tool skipped 0 rows: 0 of 0 wrong
+categories   correct-tool: 68
+
+== count-python-tool v6 gpt-6-astra (run 3196479)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+tool used    
+tool skipped 0 rows: 0 of 0 wrong
+categories   
+
+== count-python-tool v6 gpt-oss-20b (run 3196481)
+correct 58 of 68; errored 1; missing 0
+by size      11: 23/26  110: 15/21  330: 20/20
+by phrasing  at-least: 7/9  at-most: 7/9  between-inclusive: 8/9  more-than: 8/9  no-less-than: 9/9  or-more: 12/13  under: 7/9
+tool used    11: 20/26  110: 15/21  330: 14/20
+tool skipped 18 rows: 2 of 18 wrong
+categories   correct-tool: 42  correct-no-tool: 16  wrong-tool: 7  miscount-no-tool: 2
+  wrong 11-under-s0: answered 200 expected 6 (off by +194)
+  wrong 11-at-most-s1: answered 1 expected 4 (off by -3)
+  wrong 110-or-more-s0: answered 284814402033 expected 52 (off by +284814401981)
+  wrong 110-at-least-s1: answered 53 expected 52 (off by +1)
+  wrong 110-more-than-s1: answered 46 expected 47 (off by -1)
+  wrong 110-under-s2: answered 1 expected 49 (off by -48)
+  wrong 110-at-most-s2: answered 0 expected 50 (off by -50)
+  wrong 110-between-inclusive-s2: answered 0 expected 3 (off by -3)
+  wrong 11-at-least-s1: answered 1 expected 6 (off by -5)
+
+== count-python-tool v6 qwen3-next-80b-a3b-instruct (run 3196483)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+tool used    
+tool skipped 0 rows: 0 of 0 wrong
+categories   
+
+== count-python-tool v6 qwen3-next-80b-a3b-thinking (run 3196484)
+correct 46 of 68; errored 6; missing 0
+by size      11: 20/20  110: 18/21  330: 8/21
+by phrasing  at-least: 4/7  at-most: 7/9  between-inclusive: 7/9  more-than: 5/8  no-less-than: 6/9  or-more: 9/12  under: 8/8
+tool used    11: 14/20  110: 13/21  330: 8/21
+tool skipped 12 rows: 0 of 12 wrong
+categories   correct-tool: 34  no-answer: 15  correct-no-tool: 12  wrong-tool: 1
+  no answer 110-at-least-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 110-no-less-than-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  wrong 110-more-than-s0: answered 52 expected 53 (off by -1)
+  no answer 330-or-more-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-or-more-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-or-more-s2: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-at-least-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-at-least-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-no-less-than-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-no-less-than-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-more-than-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-more-than-s2: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-at-most-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-at-most-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-between-inclusive-s0: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+  no answer 330-between-inclusive-s1: ResponseParsingError: Response parsing failed.
+Input Value:
+---
+
+---
+Target Schema:
+---
+{
+  "additionalProperties": false,
+  "properties": {
+    "value": {
+    
+
+== count-rows-tool v2 claude-haiku-4-5-20251001 (run 3194895)
+correct 52 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 5/21
+by phrasing  at-least: 6/9  at-most: 8/9  between-inclusive: 8/9  more-than: 6/9  no-less-than: 6/9  or-more: 11/14  under: 7/9
+categories   correct: 52  miscounted-rows: 16
+  wrong 330-or-more-s0: answered 167 expected 158 (off by +9)
+  wrong 330-or-more-s1: answered 161 expected 154 (off by +7)
+  wrong 330-or-more-s2: answered 187 expected 160 (off by +27)
+  wrong 330-at-least-s0: answered 210 expected 204 (off by +6)
+  wrong 330-at-least-s1: answered 256 expected 225 (off by +31)
+  wrong 330-at-least-s2: answered 186 expected 199 (off by -13)
+  wrong 330-no-less-than-s0: answered 184 expected 178 (off by +6)
+  wrong 330-no-less-than-s1: answered 281 expected 220 (off by +61)
+  wrong 330-no-less-than-s2: answered 174 expected 169 (off by +5)
+  wrong 330-more-than-s0: answered 170 expected 155 (off by +15)
+  wrong 330-more-than-s1: answered 200 expected 190 (off by +10)
+  wrong 330-more-than-s2: answered 250 expected 216 (off by +34)
+  wrong 330-under-s1: answered 126 expected 122 (off by +4)
+  wrong 330-under-s2: answered 150 expected 173 (off by -23)
+  wrong 330-at-most-s1: answered 150 expected 167 (off by -17)
+  wrong 330-between-inclusive-s0: answered 135 expected 129 (off by +6)
+
+== count-rows-tool v2 claude-opus-5-default (run 3194899)
+correct 56 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 9/21
+by phrasing  at-least: 6/9  at-most: 9/9  between-inclusive: 8/9  more-than: 7/9  no-less-than: 6/9  or-more: 12/14  under: 8/9
+categories   correct: 56  miscounted-rows: 12
+  wrong 330-or-more-s1: answered 153 expected 154 (off by -1)
+  wrong 330-or-more-s2: answered 159 expected 160 (off by -1)
+  wrong 330-at-least-s0: answered 200 expected 204 (off by -4)
+  wrong 330-at-least-s1: answered 221 expected 225 (off by -4)
+  wrong 330-at-least-s2: answered 195 expected 199 (off by -4)
+  wrong 330-no-less-than-s0: answered 179 expected 178 (off by +1)
+  wrong 330-no-less-than-s1: answered 216 expected 220 (off by -4)
+  wrong 330-no-less-than-s2: answered 166 expected 169 (off by -3)
+  wrong 330-more-than-s0: answered 153 expected 155 (off by -2)
+  wrong 330-more-than-s2: answered 213 expected 216 (off by -3)
+  wrong 330-under-s2: answered 168 expected 173 (off by -5)
+  wrong 330-between-inclusive-s0: answered 128 expected 129 (off by -1)
+
+== count-rows-tool v2 claude-sonnet-5-default (run 3194897)
+correct 57 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 10/21
+by phrasing  at-least: 6/9  at-most: 8/9  between-inclusive: 9/9  more-than: 7/9  no-less-than: 7/9  or-more: 12/14  under: 8/9
+categories   correct: 49  miscounted-rows: 11  correct-no-filter: 8
+  wrong 330-or-more-s1: answered 152 expected 154 (off by -2)
+  wrong 330-or-more-s2: answered 168 expected 160 (off by +8)
+  wrong 330-at-least-s0: answered 216 expected 204 (off by +12)
+  wrong 330-at-least-s1: answered 210 expected 225 (off by -15)
+  wrong 330-at-least-s2: answered 204 expected 199 (off by +5)
+  wrong 330-no-less-than-s1: answered 230 expected 220 (off by +10)
+  wrong 330-no-less-than-s2: answered 172 expected 169 (off by +3)
+  wrong 330-more-than-s1: answered 193 expected 190 (off by +3)
+  wrong 330-more-than-s2: answered 213 expected 216 (off by -3)
+  wrong 330-under-s2: answered 183 expected 173 (off by +10)
+  wrong 330-at-most-s1: answered 174 expected 167 (off by +7)
+
+== count-rows-tool v2 gemini-2.5-flash (run 3194891)
+correct 43 of 68; errored 0; missing 0
+by size      11: 26/26  110: 15/21  330: 2/21
+by phrasing  at-least: 5/9  at-most: 4/9  between-inclusive: 6/9  more-than: 7/9  no-less-than: 5/9  or-more: 11/14  under: 5/9
+categories   correct: 43  miscounted-rows: 24  no-call: 1
+  wrong 110-or-more-s2: answered 79 expected 77 (off by +2)
+  wrong 110-at-least-s0: answered 73 expected 72 (off by +1)
+  wrong 110-no-less-than-s1: answered 1 expected 47 (off by -46)
+  wrong 110-under-s1: answered 62 expected 61 (off by +1)
+  wrong 110-at-most-s0: answered 49 expected 47 (off by +2)
+  wrong 110-at-most-s1: answered 62 expected 66 (off by -4)
+  wrong 330-or-more-s0: answered 156 expected 158 (off by -2)
+  wrong 330-or-more-s1: answered 159 expected 154 (off by +5)
+  wrong 330-at-least-s0: answered 215 expected 204 (off by +11)
+  wrong 330-at-least-s1: answered 220 expected 225 (off by -5)
+  wrong 330-at-least-s2: answered 201 expected 199 (off by +2)
+  wrong 330-no-less-than-s0: answered 171 expected 178 (off by -7)
+  wrong 330-no-less-than-s1: answered 200 expected 220 (off by -20)
+  wrong 330-no-less-than-s2: answered 165 expected 169 (off by -4)
+  wrong 330-more-than-s0: answered 171 expected 155 (off by +16)
+  wrong 330-more-than-s2: answered 204 expected 216 (off by -12)
+  wrong 330-under-s0: answered 134 expected 135 (off by -1)
+  wrong 330-under-s1: answered 127 expected 122 (off by +5)
+  wrong 330-under-s2: answered 160 expected 173 (off by -13)
+  wrong 330-at-most-s0: answered 134 expected 137 (off by -3)
+  wrong 330-at-most-s1: answered 177 expected 167 (off by +10)
+  wrong 330-at-most-s2: answered 107 expected 102 (off by +5)
+  wrong 330-between-inclusive-s0: answered 138 expected 129 (off by +9)
+  wrong 330-between-inclusive-s1: answered 61 expected 60 (off by +1)
+  wrong 330-between-inclusive-s2: answered 97 expected 90 (off by +7)
+
+== count-rows-tool v2 gemini-3.5-flash-lite (run 3194889)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-rows-tool v2 gemini-3.7-flash (run 3194124)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-rows-tool v2 gemini-3.8-flash (run 3194893)
+correct 68 of 68; errored 0; missing 0
+by size      11: 26/26  110: 21/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 14/14  under: 9/9
+categories   correct: 68
+
+== count-rows-tool v2 gemma-4-26b-a4b-it (run 3194907)
+correct 67 of 68; errored 0; missing 0
+by size      11: 26/26  110: 20/21  330: 21/21
+by phrasing  at-least: 9/9  at-most: 9/9  between-inclusive: 9/9  more-than: 9/9  no-less-than: 9/9  or-more: 13/14  under: 9/9
+categories   correct: 67  miscounted-rows: 1
+  wrong 110-or-more-s0: answered 51 expected 52 (off by -1)
+
+== count-rows-tool v2 gpt-5.4-mini-2026-03-17 (run 3194903)
+correct 49 of 68; errored 0; missing 0
+by size      11: 26/26  110: 20/21  330: 3/21
+by phrasing  at-least: 6/9  at-most: 6/9  between-inclusive: 7/9  more-than: 6/9  no-less-than: 6/9  or-more: 11/14  under: 7/9
+categories   correct: 49  miscounted-rows: 19
+  wrong 110-between-inclusive-s0: answered 50 expected 49 (off by +1)
+  wrong 330-or-more-s0: answered 165 expected 158 (off by +7)
+  wrong 330-or-more-s1: answered 162 expected 154 (off by +8)
+  wrong 330-or-more-s2: answered 166 expected 160 (off by +6)
+  wrong 330-at-least-s0: answered 201 expected 204 (off by -3)
+  wrong 330-at-least-s1: answered 200 expected 225 (off by -25)
+  wrong 330-at-least-s2: answered 184 expected 199 (off by -15)
+  wrong 330-no-less-than-s0: answered 177 expected 178 (off by -1)
+  wrong 330-no-less-than-s1: answered 208 expected 220 (off by -12)
+  wrong 330-no-less-than-s2: answered 178 expected 169 (off by +9)
+  wrong 330-more-than-s0: answered 157 expected 155 (off by +2)
+  wrong 330-more-than-s1: answered 182 expected 190 (off by -8)
+  wrong 330-more-than-s2: answered 223 expected 216 (off by +7)
+  wrong 330-under-s0: answered 133 expected 135 (off by -2)
+  wrong 330-under-s2: answered 170 expected 173 (off by -3)
+  wrong 330-at-most-s0: answered 136 expected 137 (off by -1)
+  wrong 330-at-most-s1: answered 169 expected 167 (off by +2)
+  wrong 330-at-most-s2: answered 100 expected 102 (off by -2)
+  wrong 330-between-inclusive-s0: answered 127 expected 129 (off by -2)
+
+== count-rows-tool v2 gpt-5.4-nano-2026-03-17 (run 3194901)
+correct 28 of 68; errored 0; missing 0
+by size      11: 26/26  110: 2/21  330: 0/21
+by phrasing  at-least: 3/9  at-most: 3/9  between-inclusive: 5/9  more-than: 3/9  no-less-than: 3/9  or-more: 8/14  under: 3/9
+categories   miscounted-rows: 40  correct: 28
+  wrong 110-or-more-s0: answered 50 expected 52 (off by -2)
+  wrong 110-or-more-s1: answered 75 expected 72 (off by +3)
+  wrong 110-or-more-s2: answered 69 expected 77 (off by -8)
+  wrong 110-at-least-s0: answered 56 expected 72 (off by -16)
+  wrong 110-at-least-s1: answered 50 expected 52 (off by -2)
+  wrong 110-at-least-s2: answered 49 expected 46 (off by +3)
+  wrong 110-no-less-than-s0: answered 83 expected 68 (off by +15)
+  wrong 110-no-less-than-s1: answered 50 expected 47 (off by +3)
+  wrong 110-no-less-than-s2: answered 58 expected 51 (off by +7)
+  wrong 110-more-than-s0: answered 52 expected 53 (off by -1)
+  wrong 110-more-than-s1: answered 46 expected 47 (off by -1)
+  wrong 110-more-than-s2: answered 65 expected 61 (off by +4)
+  wrong 110-under-s0: answered 57 expected 48 (off by +9)
+  wrong 110-under-s1: answered 73 expected 61 (off by +12)
+  wrong 110-under-s2: answered 54 expected 49 (off by +5)
+  wrong 110-at-most-s0: answered 46 expected 47 (off by -1)
+  wrong 110-at-most-s1: answered 64 expected 66 (off by -2)
+  wrong 110-at-most-s2: answered 49 expected 50 (off by -1)
+  wrong 110-between-inclusive-s0: answered 47 expected 49 (off by -2)
+  wrong 330-or-more-s0: answered 109 expected 158 (off by -49)
+  wrong 330-or-more-s1: answered 100 expected 154 (off by -54)
+  wrong 330-or-more-s2: answered 101 expected 160 (off by -59)
+  wrong 330-at-least-s0: answered 157 expected 204 (off by -47)
+  wrong 330-at-least-s1: answered 156 expected 225 (off by -69)
+  wrong 330-at-least-s2: answered 118 expected 199 (off by -81)
+  wrong 330-no-less-than-s0: answered 129 expected 178 (off by -49)
+  wrong 330-no-less-than-s1: answered 135 expected 220 (off by -85)
+  wrong 330-no-less-than-s2: answered 104 expected 169 (off by -65)
+  wrong 330-more-than-s0: answered 108 expected 155 (off by -47)
+  wrong 330-more-than-s1: answered 127 expected 190 (off by -63)
+  wrong 330-more-than-s2: answered 330 expected 216 (off by +114)
+  wrong 330-under-s0: answered 96 expected 135 (off by -39)
+  wrong 330-under-s1: answered 100 expected 122 (off by -22)
+  wrong 330-under-s2: answered 149 expected 173 (off by -24)
+  wrong 330-at-most-s0: answered 111 expected 137 (off by -26)
+  wrong 330-at-most-s1: answered 140 expected 167 (off by -27)
+  wrong 330-at-most-s2: answered 101 expected 102 (off by -1)
+  wrong 330-between-inclusive-s0: answered 113 expected 129 (off by -16)
+  wrong 330-between-inclusive-s1: answered 58 expected 60 (off by -2)
+  wrong 330-between-inclusive-s2: answered 101 expected 90 (off by +11)
+
+== count-rows-tool v2 gpt-6-astra (run 3194905)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-rows-tool v2 gpt-oss-20b (run 3194909)
+correct 56 of 68; errored 0; missing 0
+by size      11: 23/26  110: 16/21  330: 17/21
+by phrasing  at-least: 6/9  at-most: 8/9  between-inclusive: 5/9  more-than: 8/9  no-less-than: 9/9  or-more: 13/14  under: 7/9
+categories   correct: 56  miscounted-rows: 11  no-call: 1
+  wrong 11-at-least-s2: answered 5 expected 8 (off by -3)
+  wrong 11-between-inclusive-s1: answered 1 expected 5 (off by -4)
+  wrong 110-at-least-s0: answered 30 expected 72 (off by -42)
+  wrong 110-more-than-s1: answered 39 expected 47 (off by -8)
+  wrong 110-under-s1: answered 28 expected 61 (off by -33)
+  wrong 110-at-most-s1: answered 63 expected 66 (off by -3)
+  wrong 110-between-inclusive-s1: answered 1 expected 17 (off by -16)
+  wrong 330-or-more-s1: answered 0 expected 154 (off by -154)
+  wrong 330-under-s2: answered 1 expected 173 (off by -172)
+  wrong 330-between-inclusive-s0: answered 0 expected 129 (off by -129)
+  wrong 330-between-inclusive-s1: answered 1 expected 60 (off by -59)
+  wrong 11-at-least-s1: answered 0 expected 6 (off by -6)
+
+== count-rows-tool v2 qwen3-next-80b-a3b-instruct (run 3194911)
+correct 0 of 68; errored 68; missing 0
+by size      
+by phrasing  
+categories   
+
+== count-rows-tool v2 qwen3-next-80b-a3b-thinking (run 3194913)
+correct 2 of 68; errored 65; missing 0
+by size      330: 2/3
+by phrasing  at-least: 0/1  at-most: 1/1  between-inclusive: 1/1
+categories   correct: 2  no-call: 1
+  wrong 330-at-least-s2: answered 0 expected 199 (off by -199)
+
+task                 ver  model                          correct  errored
+count-engine         v1   gemini-2.5-flash                33/68      35
+count-engine         v1   gemini-3.7-flash                68/68       0
+count-engine         v2   claude-haiku-4-5-20251001        0/68      68
+count-engine         v2   claude-opus-5-default            0/68      68
+count-engine         v2   claude-sonnet-5-default          1/68      67
+count-engine         v2   gemini-2.5-flash                68/68       0
+count-engine         v2   gemini-3.5-flash-lite           11/68      57
+count-engine         v2   gemini-3.7-flash                68/68       0
+count-engine         v2   gemini-3.8-flash                 0/68      68
+count-engine         v2   gemma-4-26b-a4b-it              65/68       3
+count-engine         v2   gpt-5.4-mini-2026-03-17          0/68      68
+count-engine         v2   gpt-5.4-nano-2026-03-17         20/68      48
+count-engine         v2   gpt-6-astra                      0/68      68
+count-engine         v2   gpt-oss-20b                     49/68      14
+count-engine         v2   qwen3-next-80b-a3b-instruct      0/68      68
+count-engine         v2   qwen3-next-80b-a3b-thinking      0/68      68
+count-engine         v3   claude-haiku-4-5-20251001        0/68      68
+count-engine         v3   claude-opus-5-default            0/68      68
+count-engine         v3   claude-sonnet-5-default          0/68      68
+count-engine         v3   gemini-2.5-flash                 0/68      68
+count-engine         v3   gemini-3.5-flash-lite            0/68      68
+count-engine         v3   gemini-3.7-flash                68/68       0
+count-engine         v3   gemini-3.8-flash                 0/68      68
+count-engine         v3   gemma-4-26b-a4b-it               0/68      68
+count-engine         v3   gpt-5.4-mini-2026-03-17          0/68      68
+count-engine         v3   gpt-5.4-nano-2026-03-17          0/68      68
+count-engine         v3   gpt-6-astra                      0/68      68
+count-engine         v3   gpt-oss-20b                      0/68      68
+count-engine         v3   qwen3-next-80b-a3b-instruct      0/68      68
+count-engine         v3   qwen3-next-80b-a3b-thinking      0/68      68
+count-engine         v7   claude-haiku-4-5-20251001       68/68       0
+count-engine         v7   claude-opus-5-default           68/68       0
+count-engine         v7   claude-sonnet-5-default         68/68       0
+count-engine         v7   gemini-2.5-flash                68/68       0
+count-engine         v7   gemini-3.5-flash-lite            0/68      68
+count-engine         v7   gemini-3.7-flash                68/68       0
+count-engine         v7   gemini-3.8-flash                68/68       0
+count-engine         v7   gemma-4-26b-a4b-it              68/68       0
+count-engine         v7   gpt-5.4-mini-2026-03-17         68/68       0
+count-engine         v7   gpt-5.4-nano-2026-03-17         68/68       0
+count-engine         v7   gpt-6-astra                      0/68      68
+count-engine         v7   gpt-oss-20b                     56/68       0
+count-engine         v7   qwen3-next-80b-a3b-instruct      0/68      68
+count-engine         v7   qwen3-next-80b-a3b-thinking      0/68      62
+count-in-context     v1   gemini-2.5-flash                47/68       0
+count-in-context     v1   gemini-3.7-flash                66/68       0
+count-in-context     v2   gemini-2.5-flash                49/68       0
+count-in-context     v2   gemini-3.7-flash                62/68       0
+count-in-context     v3   gemini-3.7-flash                48/68       0
+count-python-told    v2   claude-haiku-4-5-20251001       45/68      23
+count-python-told    v2   claude-opus-5-default            1/68      67
+count-python-told    v2   claude-sonnet-5-default         19/68      49
+count-python-told    v2   gemini-2.5-flash                19/68      15
+count-python-told    v2   gemini-3.5-flash-lite           48/68      20
+count-python-told    v2   gemini-3.7-flash                50/68      18
+count-python-told    v2   gemini-3.8-flash                31/68      37
+count-python-told    v2   gemma-4-26b-a4b-it              65/68       3
+count-python-told    v2   gpt-5.4-mini-2026-03-17         25/68      41
+count-python-told    v2   gpt-5.4-nano-2026-03-17         55/68      13
+count-python-told    v2   gpt-6-astra                      0/68      68
+count-python-told    v2   gpt-oss-20b                     49/68       0
+count-python-told    v2   qwen3-next-80b-a3b-instruct      0/68      68
+count-python-told    v2   qwen3-next-80b-a3b-thinking     55/68       1
+count-python-tool    v1   gemini-2.5-flash                38/68       4
+count-python-tool    v1   gemini-3.7-flash                68/68       0
+count-python-tool    v2   gemini-2.5-flash                38/68       0
+count-python-tool    v2   gemini-3.7-flash                68/68       0
+count-python-tool    v3   gemini-3.7-flash                68/68       0
+count-python-tool    v6   claude-haiku-4-5-20251001       68/68       0
+count-python-tool    v6   claude-opus-5-default           68/68       0
+count-python-tool    v6   claude-sonnet-5-default         68/68       0
+count-python-tool    v6   gemini-2.5-flash                36/68       1
+count-python-tool    v6   gemini-3.5-flash-lite           68/68       0
+count-python-tool    v6   gemini-3.7-flash                68/68       0
+count-python-tool    v6   gemini-3.8-flash                68/68       0
+count-python-tool    v6   gemma-4-26b-a4b-it              68/68       0
+count-python-tool    v6   gpt-5.4-mini-2026-03-17         61/68       0
+count-python-tool    v6   gpt-5.4-nano-2026-03-17         68/68       0
+count-python-tool    v6   gpt-6-astra                      0/68      68
+count-python-tool    v6   gpt-oss-20b                     58/68       1
+count-python-tool    v6   qwen3-next-80b-a3b-instruct      0/68      68
+count-python-tool    v6   qwen3-next-80b-a3b-thinking     46/68       6
+count-rows-tool      v2   claude-haiku-4-5-20251001       52/68       0
+count-rows-tool      v2   claude-opus-5-default           56/68       0
+count-rows-tool      v2   claude-sonnet-5-default         57/68       0
+count-rows-tool      v2   gemini-2.5-flash                43/68       0
+count-rows-tool      v2   gemini-3.5-flash-lite            0/68      68
+count-rows-tool      v2   gemini-3.7-flash                68/68       0
+count-rows-tool      v2   gemini-3.8-flash                68/68       0
+count-rows-tool      v2   gemma-4-26b-a4b-it              67/68       0
+count-rows-tool      v2   gpt-5.4-mini-2026-03-17         49/68       0
+count-rows-tool      v2   gpt-5.4-nano-2026-03-17         28/68       0
+count-rows-tool      v2   gpt-6-astra                      0/68      68
+count-rows-tool      v2   gpt-oss-20b                     56/68       0
+count-rows-tool      v2   qwen3-next-80b-a3b-instruct      0/68      68
+count-rows-tool      v2   qwen3-next-80b-a3b-thinking      2/68      65
