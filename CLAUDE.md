@@ -4,6 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Entry for the dev.to Kaggle Benchmarking Challenge (due 2026-10-11, 11:59 PM PDT; the post must link the benchmark on Kaggle). The benchmark is "Count It or Compute It": the same 68 counting questions in five task modes.
 
+**Read `NEXT.md` first**: it holds the current state (what is published, what is private, the dev.to draft id) and the remaining steps.
+
 ## Tasks
 
 - `tasks/count_in_context.py`, `count_python_tool.py`, `count_python_told.py`, `count_rows_tool.py`, `count_engine.py`: one Kaggle task per file, slug = file name with `-` for `_`. Each file must stand alone on Kaggle, so the data, filter parser and scoring code is copied into each one between `# ---- shared:` and `# ---- end shared ----`.
