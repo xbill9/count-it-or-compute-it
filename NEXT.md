@@ -19,7 +19,7 @@ Everything needed to finish is in this repo. Nothing depends on the machine it w
 
 ## 2026-09-26
 
-Pushed: `count-engine` v8 and v9 (07:26 EDT, same error), `count-rows-tool` v3, `count-python-tool` v7. All three are `Errored` because the push run's first call hit `403 ... max estimated cost ($0.0308625) exceeds your available quota`. The small `probe-max-tokens` run completed, so a passing probe does not show there is room for a push. The CLI has no quota command, and the benchmark page's "Add Models" opens nothing once all 10 models are on it. Push all three again (step 3) once the quota frees up.
+Pushed: `count-engine` v8, v9 (07:26 EDT) and v10 (09:24 EDT), same error, `count-rows-tool` v3, `count-python-tool` v7. All three are `Errored` because the push run's first call hit `403 ... max estimated cost ($0.0308625) exceeds your available quota`. The small `probe-max-tokens` run completed, so a passing probe does not show there is room for a push. The CLI has no quota command, and the benchmark page's "Add Models" opens nothing once all 10 models are on it. Push all three again (step 3) once the quota frees up.
 
 ## Why the leaderboard is blank
 
